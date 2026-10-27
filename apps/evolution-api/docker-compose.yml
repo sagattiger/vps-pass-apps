@@ -1,7 +1,7 @@
 services:
   api:
     restart: unless-stopped
-    image: atendai/evolution-api:v2.2.3
+    image: evoapicloud/evolution-api:v2.2.3
     depends_on: [postgres, redis]
     environment:
       SERVER_URL: "{{url}}"

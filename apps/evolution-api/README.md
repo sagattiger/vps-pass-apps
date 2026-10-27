@@ -34,7 +34,9 @@ API key: {{secret}}
 
 ## Image tags
 
-`atendai/evolution-api:v2.2.3` (pinned release), `postgres:16-alpine`, `redis:7-alpine`. Newer v2 releases may be published under another Docker Hub organization (`evoapicloud/evolution-api`): check before upgrading.
+`evoapicloud/evolution-api:v2.2.3` (pinned release), `postgres:16-alpine`, `redis:7-alpine`.
+
+The project moved its images from `atendai/evolution-api` to `evoapicloud/evolution-api`; pulls from the old name now fail ("could not download the app images"). Same version, same variables. Newer v2.3.x releases exist under the new name: test one before moving the pin.
 
 ## First login
 
