@@ -1,0 +1,23 @@
+services:
+  wiki:
+    image: ghcr.io/requarks/wiki:2
+    restart: unless-stopped
+    depends_on: [db]
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_USER: wikijs
+      DB_PASS: "{{password}}"
+      DB_NAME: wiki
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: wikijs
+      POSTGRES_PASSWORD: "{{password}}"
+      POSTGRES_DB: wiki
+    volumes:
+      - pg:/var/lib/postgresql/data
+volumes:
+  pg: {}

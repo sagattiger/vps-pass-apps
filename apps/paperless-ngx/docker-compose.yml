@@ -1,0 +1,48 @@
+services:
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    restart: unless-stopped
+    depends_on: [db, broker]
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+      PAPERLESS_DBUSER: paperless
+      PAPERLESS_DBPASS: "{{password}}"
+      PAPERLESS_DBNAME: paperless
+      PAPERLESS_URL: "{{url}}"
+      PAPERLESS_SECRET_KEY: "{{secret}}"
+      PAPERLESS_ADMIN_USER: admin
+      PAPERLESS_ADMIN_PASSWORD: "{{secret2}}"
+      PAPERLESS_ADMIN_MAIL: "{{email}}"
+      PAPERLESS_TIME_ZONE: "{{tz}}"
+      PAPERLESS_OCR_LANGUAGE: por+eng
+      PAPERLESS_OCR_LANGUAGES: por
+      PAPERLESS_TASK_WORKERS: "1"
+      PAPERLESS_THREADS_PER_WORKER: "1"
+      PAPERLESS_WEBSERVER_WORKERS: "1"
+    volumes:
+      - data:/usr/src/paperless/data
+      - media:/usr/src/paperless/media
+      - consume:/usr/src/paperless/consume
+      - export:/usr/src/paperless/export
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: "{{password}}"
+      POSTGRES_DB: paperless
+    volumes:
+      - pg:/var/lib/postgresql/data
+  broker:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis:/data
+volumes:
+  data: {}
+  media: {}
+  consume: {}
+  export: {}
+  pg: {}
+  redis: {}

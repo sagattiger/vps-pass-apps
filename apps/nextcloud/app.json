@@ -1,0 +1,13 @@
+{
+  "name": "Nextcloud",
+  "slug": "nextcloud",
+  "category": "Files",
+  "description": "Files, calendar and contacts",
+  "web_service": "nextcloud",
+  "web_port": 80,
+  "ram_mb": 1024,
+  "disk_mb": 5120,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{secret2}}\nDesktop and mobile apps: server address {{url}}"
+}

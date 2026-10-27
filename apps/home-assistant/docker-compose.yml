@@ -1,0 +1,10 @@
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    restart: unless-stopped
+    environment:
+      TZ: "{{tz}}"
+    volumes:
+      - config:/config
+volumes:
+  config: {}

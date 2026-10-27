@@ -1,0 +1,13 @@
+{
+  "name": "Actual Budget",
+  "slug": "actual-budget",
+  "category": "Finance",
+  "description": "Personal budgeting",
+  "web_service": "actual",
+  "web_port": 5006,
+  "ram_mb": 192,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and set the server password on the first screen."
+}

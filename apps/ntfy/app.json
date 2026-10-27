@@ -1,0 +1,13 @@
+{
+  "name": "ntfy",
+  "slug": "ntfy",
+  "category": "Notifications",
+  "description": "Push notifications to phone and desktop",
+  "web_service": "ntfy",
+  "web_port": 80,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nServer for the ntfy apps: {{url}}"
+}

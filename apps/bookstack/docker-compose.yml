@@ -1,0 +1,41 @@
+services:
+  bookstack:
+    image: lscr.io/linuxserver/bookstack:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - path: bookstack.env
+        required: false
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "{{tz}}"
+      APP_URL: "{{url}}"
+      APP_PROXIES: "*"
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_USERNAME: bookstack
+      DB_PASSWORD: "{{password}}"
+      DB_DATABASE: bookstack
+    volumes:
+      - config:/config
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: bookstack
+      MARIADB_USER: bookstack
+      MARIADB_PASSWORD: "{{password}}"
+      MARIADB_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  config: {}
+  db: {}

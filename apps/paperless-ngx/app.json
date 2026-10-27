@@ -1,0 +1,13 @@
+{
+  "name": "Paperless-ngx",
+  "slug": "paperless-ngx",
+  "category": "Documents & Notes",
+  "description": "Document management with OCR",
+  "web_service": "webserver",
+  "web_port": 8000,
+  "ram_mb": 1024,
+  "disk_mb": 4096,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{secret2}}"
+}

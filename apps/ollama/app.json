@@ -1,0 +1,13 @@
+{
+  "name": "Ollama",
+  "slug": "ollama",
+  "category": "AI",
+  "description": "Ollama API for cloud models (no local models)",
+  "web_service": "proxy",
+  "web_port": 8080,
+  "ram_mb": 192,
+  "disk_mb": 4096,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "API address: {{url}}\nAPI key (send as \"Authorization: Bearer <key>\"): {{secret}}\nConnect your ollama.com account: open Logs, copy the public key and add it at https://ollama.com/settings/keys. Use cloud model names (ending in -cloud / :cloud)."
+}

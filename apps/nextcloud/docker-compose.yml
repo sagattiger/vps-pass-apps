@@ -1,0 +1,56 @@
+services:
+  nextcloud:
+    image: nextcloud:34-apache
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment:
+      MYSQL_HOST: db
+      MYSQL_DATABASE: nextcloud
+      MYSQL_USER: nextcloud
+      MYSQL_PASSWORD: "{{password}}"
+      REDIS_HOST: redis
+      NEXTCLOUD_ADMIN_USER: admin
+      NEXTCLOUD_ADMIN_PASSWORD: "{{secret2}}"
+      NEXTCLOUD_TRUSTED_DOMAINS: "{{host}}"
+      OVERWRITEPROTOCOL: https
+      OVERWRITEHOST: "{{host}}"
+      OVERWRITECLIURL: "{{url}}"
+      TRUSTED_PROXIES: "10.0.0.0/8 172.16.0.0/12 192.168.0.0/16"
+      APACHE_DISABLE_REWRITE_IP: "1"
+      PHP_UPLOAD_LIMIT: 10G
+      PHP_MEMORY_LIMIT: 512M
+    volumes:
+      - html:/var/www/html
+  cron:
+    image: nextcloud:34-apache
+    restart: unless-stopped
+    entrypoint: /cron.sh
+    depends_on: [nextcloud]
+    volumes:
+      - html:/var/www/html
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    command: ["--transaction-isolation=READ-COMMITTED", "--log-bin=binlog", "--binlog-format=ROW"]
+    environment:
+      MARIADB_DATABASE: nextcloud
+      MARIADB_USER: nextcloud
+      MARIADB_PASSWORD: "{{password}}"
+      MARIADB_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+volumes:
+  html: {}
+  db: {}

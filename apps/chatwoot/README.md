@@ -56,4 +56,4 @@ Open the address and create the admin account.
 
 ## Paid products
 
-Needs a **Q1 price** and a (cheaper) **Q2 price** product (type *Core VPS app*), picked on the catalogue app. Free in Q3.
+Needs a **Q1 price** and a (cheaper) **Q2 price** product (type *Core VPS app*), picked on the catalogue app. Free in Q3. Price not set yet.

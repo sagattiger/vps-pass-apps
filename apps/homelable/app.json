@@ -1,0 +1,13 @@
+{
+  "name": "Homelable",
+  "slug": "homelable",
+  "category": "Monitoring",
+  "description": "Infrastructure map with live status checks",
+  "web_service": "frontend",
+  "web_port": 80,
+  "ram_mb": 256,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}"
+}

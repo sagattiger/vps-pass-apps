@@ -1,0 +1,13 @@
+{
+  "name": "Homarr",
+  "slug": "homarr",
+  "category": "Dashboard",
+  "description": "Homepage dashboard for your apps",
+  "web_service": "homarr",
+  "web_port": 7575,
+  "ram_mb": 384,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and follow the onboarding to create the admin account."
+}

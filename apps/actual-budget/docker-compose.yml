@@ -1,0 +1,8 @@
+services:
+  actual:
+    image: actualbudget/actual-server:latest
+    restart: unless-stopped
+    volumes:
+      - data:/data
+volumes:
+  data: {}

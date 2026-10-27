@@ -1,0 +1,13 @@
+{
+  "name": "BookStack",
+  "slug": "bookstack",
+  "category": "Documents & Notes",
+  "description": "Wiki and documentation",
+  "web_service": "bookstack",
+  "web_port": 80,
+  "ram_mb": 512,
+  "disk_mb": 1536,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Email: {{email}}\nPassword: {{password}}"
+}

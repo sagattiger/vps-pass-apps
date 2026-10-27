@@ -1,0 +1,13 @@
+{
+  "name": "GitLab",
+  "slug": "gitlab",
+  "category": "Developer",
+  "description": "Git hosting with CI/CD",
+  "web_service": "gitlab",
+  "web_port": 80,
+  "ram_mb": 3072,
+  "disk_mb": 10240,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "The first start takes 5-10 minutes.\nUser: root\nPassword: {{password}}\nThen turn off public sign-up in Admin > Settings > General."
+}

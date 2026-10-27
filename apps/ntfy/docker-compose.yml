@@ -1,0 +1,19 @@
+services:
+  ntfy:
+    image: binwiederhier/ntfy:latest
+    restart: unless-stopped
+    command: ["serve"]
+    environment:
+      NTFY_BASE_URL: "{{url}}"
+      NTFY_BEHIND_PROXY: "true"
+      NTFY_CACHE_FILE: /var/lib/ntfy/cache.db
+      NTFY_AUTH_FILE: /var/lib/ntfy/auth.db
+      NTFY_AUTH_DEFAULT_ACCESS: deny-all
+      NTFY_ENABLE_LOGIN: "true"
+      NTFY_ATTACHMENT_CACHE_DIR: /var/lib/ntfy/attachments
+      NTFY_UPSTREAM_BASE_URL: https://ntfy.sh
+      TZ: "{{tz}}"
+    volumes:
+      - data:/var/lib/ntfy
+volumes:
+  data: {}

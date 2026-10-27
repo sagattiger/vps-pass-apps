@@ -1,0 +1,14 @@
+{
+  "name": "Immich",
+  "slug": "immich",
+  "category": "Photos",
+  "description": "Photo and video backup",
+  "web_service": "immich-server",
+  "web_port": 2283,
+  "ram_mb": 2560,
+  "disk_mb": 10240,
+  "free_from": "Q2",
+  "q1_price": "R$ 6,99",
+  "status": "Testing",
+  "login_info": "Open the address and create the admin account (the first account is the admin).\nMobile app server URL: {{url}}"
+}

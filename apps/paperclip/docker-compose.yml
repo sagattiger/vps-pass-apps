@@ -1,0 +1,37 @@
+services:
+  paperclip:
+    image: ghcr.io/paperclipai/paperclip:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      HOST: 0.0.0.0
+      PAPERCLIP_HOME: /paperclip
+      PAPERCLIP_DEPLOYMENT_MODE: authenticated
+      PAPERCLIP_DEPLOYMENT_EXPOSURE: public
+      PAPERCLIP_PUBLIC_URL: "{{url}}"
+      PAPERCLIP_MIGRATION_AUTO_APPLY: "true"
+      BETTER_AUTH_SECRET: "{{secret}}"
+      PAPERCLIP_AGENT_JWT_SECRET: "{{secret2}}"
+      PAPERCLIP_TOOL_ACTION_SIGNING_SECRET: "{{hex64}}"
+      DATABASE_URL: "postgres://paperclip:{{password}}@db:5432/paperclip"
+    volumes:
+      - data:/paperclip
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: paperclip
+      POSTGRES_PASSWORD: "{{password}}"
+      POSTGRES_DB: paperclip
+    volumes:
+      - pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U paperclip"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  data: {}
+  pg: {}

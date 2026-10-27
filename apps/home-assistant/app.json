@@ -1,0 +1,13 @@
+{
+  "name": "Home Assistant",
+  "slug": "home-assistant",
+  "category": "Home automation",
+  "description": "Home automation (container edition)",
+  "web_service": "homeassistant",
+  "web_port": 8123,
+  "ram_mb": 512,
+  "disk_mb": 3072,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and create the owner account."
+}

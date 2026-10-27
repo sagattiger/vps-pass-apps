@@ -1,0 +1,21 @@
+services:
+  frontend:
+    image: ghcr.io/pouzor/homelable-frontend:latest
+    restart: unless-stopped
+    depends_on: [backend]
+  backend:
+    image: ghcr.io/pouzor/homelable-backend:latest
+    restart: unless-stopped
+    env_file:
+      - path: auth.env
+        required: false
+    environment:
+      SQLITE_PATH: /app/data/homelab.db
+      CORS_ORIGINS: "[\"{{url}}\"]"
+      SECRET_KEY: "{{secret}}"
+      AUTH_USERNAME: admin
+      SCANNER_RANGES: "[]"
+    volumes:
+      - data:/app/data
+volumes:
+  data: {}

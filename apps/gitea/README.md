@@ -14,7 +14,7 @@ Git hosting. Status: **Testing**.
 | Web port | `3000` |
 | RAM reserved (MB) | `384` |
 | Disk reserved (MB) | `2048` |
-| Free from | **Q2** |
+| Free from | **Q1** |
 | Status | Testing |
 
 ## Docker compose
@@ -48,4 +48,4 @@ Open the address, keep the suggested settings (SQLite) and create the administra
 
 ## Paid products
 
-Needs a **Q1 price** product (type *Core VPS app*), picked on the catalogue app. Free in Q2 and Q3.
+None: free in every plan.

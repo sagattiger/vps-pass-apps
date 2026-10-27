@@ -1,0 +1,11 @@
+services:
+  omniroute:
+    image: diegosouzapw/omniroute:latest
+    restart: unless-stopped
+    stop_grace_period: 40s
+    environment:
+      INITIAL_PASSWORD: "{{password}}"
+    volumes:
+      - data:/app/data
+volumes:
+  data: {}

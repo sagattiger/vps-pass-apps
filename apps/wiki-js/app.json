@@ -1,0 +1,13 @@
+{
+  "name": "Wiki.js",
+  "slug": "wiki-js",
+  "category": "Documents & Notes",
+  "description": "Modern wiki",
+  "web_service": "wiki",
+  "web_port": 3000,
+  "ram_mb": 512,
+  "disk_mb": 1536,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address, create the administrator account and keep the site URL {{url}}."
+}

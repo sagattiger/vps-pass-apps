@@ -1,0 +1,13 @@
+{
+  "name": "Obsidian LiveSync",
+  "slug": "obsidian-livesync",
+  "category": "Documents & Notes",
+  "description": "Sync server for Obsidian notes",
+  "web_service": "couchdb",
+  "web_port": 5984,
+  "ram_mb": 256,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "In Obsidian install the \"Self-hosted LiveSync\" plugin and use:\nServer URI: {{url}}\nUsername: admin\nPassword: {{password}}\nDatabase name: obsidian (any name; the plugin creates it)"
+}

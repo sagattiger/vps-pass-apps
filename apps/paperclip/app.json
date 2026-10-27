@@ -1,0 +1,13 @@
+{
+  "name": "Paperclip",
+  "slug": "paperclip",
+  "category": "AI",
+  "description": "Run a company of AI agents",
+  "web_service": "paperclip",
+  "web_port": 3100,
+  "ram_mb": 1024,
+  "disk_mb": 4096,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away, create your account and choose \"Claim this instance\" (the board-claim link is also in Logs). Add your AI provider key in the settings."
+}
