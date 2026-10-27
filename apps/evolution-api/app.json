@@ -1,0 +1,13 @@
+{
+  "name": "Evolution API",
+  "slug": "evolution-api",
+  "category": "Messaging",
+  "description": "WhatsApp API",
+  "web_service": "api",
+  "web_port": 8080,
+  "ram_mb": 768,
+  "disk_mb": 3072,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Manager: {{url}}/manager\nAPI key: {{secret}}"
+}

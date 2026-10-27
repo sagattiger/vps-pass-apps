@@ -1,0 +1,13 @@
+{
+  "name": "Flowise",
+  "slug": "flowise",
+  "category": "AI",
+  "description": "AI agents and chatflows",
+  "web_service": "flowise",
+  "web_port": 3000,
+  "ram_mb": 768,
+  "disk_mb": 2048,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address and create the admin account."
+}

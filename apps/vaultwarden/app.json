@@ -1,0 +1,13 @@
+{
+  "name": "Vaultwarden",
+  "slug": "vaultwarden",
+  "category": "Security",
+  "description": "Password manager (Bitwarden compatible)",
+  "web_service": "vaultwarden",
+  "web_port": 80,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Create your account, then use the Bitwarden apps with the server address {{url}}.\nAdmin page: {{url}}/admin (token: {{secret}})"
+}

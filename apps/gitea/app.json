@@ -1,0 +1,13 @@
+{
+  "name": "Gitea",
+  "slug": "gitea",
+  "category": "Developer",
+  "description": "Git hosting",
+  "web_service": "gitea",
+  "web_port": 3000,
+  "ram_mb": 384,
+  "disk_mb": 2048,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address, keep the suggested settings (SQLite) and create the administrator account at the bottom of the page."
+}

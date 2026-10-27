@@ -1,0 +1,13 @@
+{
+  "name": "n8n",
+  "slug": "n8n",
+  "category": "Automation",
+  "description": "Workflow automation",
+  "web_service": "n8n",
+  "web_port": 5678,
+  "ram_mb": 512,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and create the owner account."
+}

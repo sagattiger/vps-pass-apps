@@ -1,0 +1,13 @@
+{
+  "name": "Chatwoot",
+  "slug": "chatwoot",
+  "category": "Support",
+  "description": "Customer support inbox",
+  "web_service": "rails",
+  "web_port": 3000,
+  "ram_mb": 2048,
+  "disk_mb": 4096,
+  "free_from": "Q3",
+  "status": "Testing",
+  "login_info": "Open the address and create the admin account."
+}

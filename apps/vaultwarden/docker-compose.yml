@@ -1,0 +1,12 @@
+services:
+  vaultwarden:
+    restart: unless-stopped
+    image: vaultwarden/server:latest
+    environment:
+      DOMAIN: "{{url}}"
+      SIGNUPS_ALLOWED: "true"
+      ADMIN_TOKEN: "{{secret}}"
+    volumes:
+      - data:/data
+volumes:
+  data: {}

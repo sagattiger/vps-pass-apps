@@ -1,0 +1,18 @@
+services:
+  n8n:
+    restart: unless-stopped
+    image: docker.n8n.io/n8nio/n8n:latest
+    environment:
+      N8N_HOST: "{{host}}"
+      N8N_PROTOCOL: https
+      N8N_PORT: "5678"
+      WEBHOOK_URL: "{{url}}/"
+      N8N_PROXY_HOPS: "1"
+      N8N_ENCRYPTION_KEY: "{{secret}}"
+      N8N_RUNNERS_ENABLED: "true"
+      GENERIC_TIMEZONE: "{{tz}}"
+      TZ: "{{tz}}"
+    volumes:
+      - n8n_data:/home/node/.n8n
+volumes:
+  n8n_data: {}

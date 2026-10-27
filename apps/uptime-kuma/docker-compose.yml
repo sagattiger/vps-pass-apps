@@ -1,0 +1,8 @@
+services:
+  kuma:
+    restart: unless-stopped
+    image: louislam/uptime-kuma:1
+    volumes:
+      - data:/app/data
+volumes:
+  data: {}

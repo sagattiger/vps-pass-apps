@@ -1,0 +1,13 @@
+{
+  "name": "WordPress",
+  "slug": "wordpress",
+  "category": "Websites",
+  "description": "Website and blog",
+  "web_service": "wordpress",
+  "web_port": 80,
+  "ram_mb": 512,
+  "disk_mb": 3072,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address and follow the WordPress installer."
+}

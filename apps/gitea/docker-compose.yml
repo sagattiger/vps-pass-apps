@@ -1,0 +1,15 @@
+services:
+  gitea:
+    restart: unless-stopped
+    image: gitea/gitea:latest
+    environment:
+      USER_UID: "1000"
+      USER_GID: "1000"
+      GITEA__database__DB_TYPE: sqlite3
+      GITEA__server__DOMAIN: "{{host}}"
+      GITEA__server__SSH_DOMAIN: "{{host}}"
+      GITEA__server__ROOT_URL: "{{url}}/"
+    volumes:
+      - data:/data
+volumes:
+  data: {}

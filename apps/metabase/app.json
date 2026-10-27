@@ -1,0 +1,13 @@
+{
+  "name": "Metabase",
+  "slug": "metabase",
+  "category": "Analytics",
+  "description": "Dashboards and BI",
+  "web_service": "metabase",
+  "web_port": 3000,
+  "ram_mb": 1536,
+  "disk_mb": 2048,
+  "free_from": "Q3",
+  "status": "Testing",
+  "login_info": "The first start takes 2-3 minutes. Then open the address and create the admin account."
+}

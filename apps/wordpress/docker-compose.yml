@@ -1,0 +1,25 @@
+services:
+  wordpress:
+    restart: unless-stopped
+    image: wordpress:6-apache
+    depends_on: [db]
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: "{{password}}"
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - html:/var/www/html
+  db:
+    restart: unless-stopped
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: "{{password}}"
+      MARIADB_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  html: {}
+  db: {}

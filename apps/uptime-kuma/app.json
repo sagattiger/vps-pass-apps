@@ -1,0 +1,13 @@
+{
+  "name": "Uptime Kuma",
+  "slug": "uptime-kuma",
+  "category": "Monitoring",
+  "description": "Uptime monitoring",
+  "web_service": "kuma",
+  "web_port": 3001,
+  "ram_mb": 256,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and create the admin account."
+}
