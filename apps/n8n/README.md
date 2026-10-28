@@ -42,6 +42,7 @@ Open the address and create the owner account.
 
 ## Admin checks
 
+- `WEBHOOK_URL` and `N8N_EDITOR_BASE_URL` are set to the public HTTPS address, so webhook URLs, email links and OAuth callback URLs (Google, Microsoft…) use `https://`, even though n8n receives plain HTTP behind the proxies.
 - **Proxy hops:** after a test install, trigger a workflow with a Webhook node and look at the client IP n8n logs. If it shows a proxy address instead of the visitor's, raise `N8N_PROXY_HOPS` (Zoraxy + central Traefik + VM Traefik can mean 2–3).
 - `N8N_ENCRYPTION_KEY` must never change after the install, or saved credentials can't be decrypted. The placeholder is generated once and kept, so only a manual edit would break it.
 - Email (invites, password reset) needs SMTP set by the customer (`N8N_SMTP_*`).

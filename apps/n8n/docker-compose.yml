@@ -7,6 +7,7 @@ services:
       N8N_PROTOCOL: https
       N8N_PORT: "5678"
       WEBHOOK_URL: "{{url}}/"
+      N8N_EDITOR_BASE_URL: "{{url}}/"
       N8N_PROXY_HOPS: "1"
       N8N_ENCRYPTION_KEY: "{{secret}}"
       N8N_RUNNERS_ENABLED: "true"
