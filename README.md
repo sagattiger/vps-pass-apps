@@ -17,8 +17,17 @@ apps/<slug>/
 | App | Slug | Category | Web service:port | RAM MB | Disk MB | Free from | Status |
 |---|---|---|---|---|---|---|---|
 | [Actual Budget](apps/actual-budget) | `actual-budget` | Finance | `actual:5006` | 192 | 512 | Q1 | Testing |
+| [AFFiNE](apps/affine) | `affine` | Documents & Notes | `affine:3010` | 1536 | 4096 | Q2 | Testing |
+| [Anki Sync Server](apps/anki-sync) | `anki-sync` | Education | `anki:8080` | 160 | 1024 | Q1 | Testing |
+| [ArchiveBox](apps/archivebox) | `archivebox` | Archiving | `archivebox:8000` | 1024 | 6144 | Q2 | Testing |
+| [BentoPDF](apps/bentopdf) | `bentopdf` | Documents & Notes | `bentopdf:8080` | 64 | 512 | Q1 | Testing |
 | [BookStack](apps/bookstack) | `bookstack` | Documents & Notes | `bookstack:80` | 512 | 1536 | Q1 | Testing |
 | [Chatwoot](apps/chatwoot) | `chatwoot` | Support | `rails:3000` | 2048 | 4096 | Q3 | Testing |
+| [Colanode](apps/colanode) | `colanode` | Documents & Notes | `web:8080` | 640 | 2048 | Q1 | Testing |
+| [CookCLI](apps/cookcli) | `cookcli` | Lifestyle | `web:8080` | 64 | 256 | Q1 | Testing |
+| [Docmost](apps/docmost) | `docmost` | Documents & Notes | `docmost:3000` | 512 | 2048 | Q1 | Testing |
+| [Docspell](apps/docspell) | `docspell` | Documents & Notes | `restserver:7880` | 2560 | 5120 | Q3 | Testing |
+| [DocuSeal](apps/docuseal) | `docuseal` | Documents & Notes | `docuseal:3000` | 384 | 2048 | Q1 | Testing |
 | [Evolution API](apps/evolution-api) | `evolution-api` | Messaging | `api:8080` | 768 | 3072 | Q1 | Testing |
 | [Flowise](apps/flowise) | `flowise` | AI | `flowise:3000` | 768 | 2048 | Q2 | Testing |
 | [Forgejo](apps/forgejo) | `forgejo` | Developer | `forgejo:3000` | 384 | 2048 | Q1 | Testing |
@@ -46,7 +55,9 @@ apps/<slug>/
 
 NocoDB, WordPress, Flowise, Metabase and Chatwoot come only from the extension's starter apps (`Services/CoreCatalog.php` in the Proxmox extension repo) and keep their original plans. The starter list is only copied into the database once, so changes here must also be made in the admin catalogue.
 
-Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month.
+Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. AFFiNE and ArchiveBox (free from Q2) and Docspell (free from Q3) have no price yet.
+
+**Not possible as a VPS Pass app:** any-sync (Anytype self-hosting) needs raw TCP 1001-1006 and UDP 1011-1016 and has no web interface; VPS Pass routes HTTP only.
 
 ## Plans
 

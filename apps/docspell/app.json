@@ -1,0 +1,13 @@
+{
+  "name": "Docspell",
+  "slug": "docspell",
+  "category": "Documents & Notes",
+  "description": "Document organizer with OCR and auto-tagging",
+  "web_service": "restserver",
+  "web_port": 7880,
+  "ram_mb": 2560,
+  "disk_mb": 5120,
+  "free_from": "Q3",
+  "status": "Testing",
+  "login_info": "Sign-up needs an invite:\n1. Open {{url}}/app/newinvite and enter the password {{secret2}} to create an invite key.\n2. Open {{url}}/app/register, use the same name for collective and user, and paste the invite key."
+}

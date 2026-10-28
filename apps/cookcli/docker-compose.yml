@@ -1,0 +1,32 @@
+services:
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on: [cook]
+    environment:
+      LOGIN_PASSWORD: "{{password}}"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        HASH=$$(caddy hash-password --plaintext "$$LOGIN_PASSWORD")
+        cat > /etc/caddy/Caddyfile <<EOF
+        {
+          admin off
+        }
+        :8080 {
+          basic_auth {
+            admin $$HASH
+          }
+          reverse_proxy cook:9080
+        }
+        EOF
+        exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+  cook:
+    image: ghcr.io/cooklang/cookcli:latest
+    restart: unless-stopped
+    command: ["cook", "server", "--host", "0.0.0.0", "--port", "9080", "/recipes"]
+    volumes:
+      - recipes:/recipes
+volumes:
+  recipes: {}

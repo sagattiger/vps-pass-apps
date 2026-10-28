@@ -1,0 +1,13 @@
+{
+  "name": "Docmost",
+  "slug": "docmost",
+  "category": "Documents & Notes",
+  "description": "Collaborative wiki and docs",
+  "web_service": "docmost",
+  "web_port": 3000,
+  "ram_mb": 512,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and create your workspace and owner account."
+}

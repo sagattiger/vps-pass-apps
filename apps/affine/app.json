@@ -1,0 +1,13 @@
+{
+  "name": "AFFiNE",
+  "slug": "affine",
+  "category": "Documents & Notes",
+  "description": "Docs, whiteboards and databases (Notion + Miro alternative)",
+  "web_service": "affine",
+  "web_port": 3010,
+  "ram_mb": 1536,
+  "disk_mb": 4096,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address and create the administrator account (name, email, password) on the first screen."
+}

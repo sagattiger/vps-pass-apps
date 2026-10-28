@@ -1,0 +1,72 @@
+x-db-env: &db
+  DOCSPELL_SERVER_BACKEND_JDBC_URL: "jdbc:postgresql://db:5432/docspell"
+  DOCSPELL_SERVER_BACKEND_JDBC_USER: docspell
+  DOCSPELL_SERVER_BACKEND_JDBC_PASSWORD: "{{password}}"
+services:
+  restserver:
+    image: ghcr.io/docspell/restserver:v0.43.0
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      solr:
+        condition: service_started
+    environment:
+      <<: *db
+      TZ: "{{tz}}"
+      DOCSPELL_SERVER_BIND_ADDRESS: 0.0.0.0
+      DOCSPELL_SERVER_BASE__URL: "{{url}}"
+      DOCSPELL_SERVER_INTERNAL__URL: "http://restserver:7880"
+      DOCSPELL_SERVER_ADMIN__ENDPOINT_SECRET: "{{secret}}"
+      DOCSPELL_SERVER_AUTH_SERVER__SECRET: "hex:{{hex64}}"
+      DOCSPELL_SERVER_BACKEND_SIGNUP_MODE: invite
+      DOCSPELL_SERVER_BACKEND_SIGNUP_NEW__INVITE__PASSWORD: "{{secret2}}"
+      DOCSPELL_SERVER_FULL__TEXT__SEARCH_ENABLED: "true"
+      DOCSPELL_SERVER_FULL__TEXT__SEARCH_SOLR_URL: "http://solr:8983/solr/docspell"
+  joex:
+    image: ghcr.io/docspell/joex:v0.43.0
+    restart: unless-stopped
+    command: ["-J-Xmx1G"]
+    depends_on:
+      db:
+        condition: service_healthy
+      solr:
+        condition: service_started
+    environment:
+      TZ: "{{tz}}"
+      DOCSPELL_JOEX_APP__ID: joex1
+      DOCSPELL_JOEX_PERIODIC__SCHEDULER_NAME: joex1
+      DOCSPELL_JOEX_SCHEDULER_NAME: joex1
+      DOCSPELL_JOEX_BASE__URL: "http://joex:7878"
+      DOCSPELL_JOEX_BIND_ADDRESS: 0.0.0.0
+      DOCSPELL_JOEX_JDBC_URL: "jdbc:postgresql://db:5432/docspell"
+      DOCSPELL_JOEX_JDBC_USER: docspell
+      DOCSPELL_JOEX_JDBC_PASSWORD: "{{password}}"
+      DOCSPELL_JOEX_FULL__TEXT__SEARCH_ENABLED: "true"
+      DOCSPELL_JOEX_FULL__TEXT__SEARCH_SOLR_URL: "http://solr:8983/solr/docspell"
+      DOCSPELL_JOEX_CONVERT_HTML__CONVERTER: weasyprint
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: docspell
+      POSTGRES_PASSWORD: "{{password}}"
+      POSTGRES_DB: docspell
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docspell -d docspell"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  solr:
+    image: solr:9
+    restart: unless-stopped
+    command: ["bash", "-c", "precreate-core docspell; exec solr-foreground"]
+    environment:
+      SOLR_HEAP: 384m
+    volumes:
+      - solr:/var/solr
+volumes:
+  db: {}
+  solr: {}

@@ -1,0 +1,13 @@
+{
+  "name": "Colanode",
+  "slug": "colanode",
+  "category": "Documents & Notes",
+  "description": "Chat, pages and databases (Slack + Notion alternative)",
+  "web_service": "web",
+  "web_port": 8080,
+  "ram_mb": 640,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address, add the server {{url}}/api/config if asked, then register: the first account gets the first workspace.\nDesktop app server: {{url}}/api/config"
+}

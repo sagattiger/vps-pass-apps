@@ -1,0 +1,22 @@
+services:
+  archivebox:
+    image: archivebox/archivebox:stable
+    restart: unless-stopped
+    command: ["server", "--quick-init", "0.0.0.0:8000"]
+    environment:
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: "{{password}}"
+      ALLOWED_HOSTS: "{{host}}"
+      CSRF_TRUSTED_ORIGINS: "{{url}}"
+      BASE_URL: "{{url}}"
+      PUBLIC_INDEX: "False"
+      PUBLIC_SNAPSHOTS: "False"
+      PUBLIC_ADD_VIEW: "False"
+      SAVE_ARCHIVE_DOT_ORG: "False"
+      MEDIA_MAX_SIZE: 750m
+      TIMEOUT: "90"
+      TZ: "{{tz}}"
+    volumes:
+      - data:/data
+volumes:
+  data: {}

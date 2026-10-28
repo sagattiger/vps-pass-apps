@@ -1,0 +1,13 @@
+{
+  "name": "BentoPDF",
+  "slug": "bentopdf",
+  "category": "Documents & Notes",
+  "description": "Private PDF toolkit in the browser",
+  "web_service": "bentopdf",
+  "web_port": 8080,
+  "ram_mb": 64,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address. No account needed: files are processed in your browser and never uploaded."
+}

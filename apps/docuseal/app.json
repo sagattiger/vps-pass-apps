@@ -1,0 +1,13 @@
+{
+  "name": "DocuSeal",
+  "slug": "docuseal",
+  "category": "Documents & Notes",
+  "description": "Document signing (DocuSign alternative)",
+  "web_service": "docuseal",
+  "web_port": 3000,
+  "ram_mb": 384,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and create the admin account on the first screen."
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ArchiveBox",
+  "slug": "archivebox",
+  "category": "Archiving",
+  "description": "Save web pages, videos and articles",
+  "web_service": "archivebox",
+  "web_port": 8000,
+  "ram_mb": 1024,
+  "disk_mb": 6144,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Log in at {{url}}/admin\nUser: admin\nPassword: {{password}}"
+}

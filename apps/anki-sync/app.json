@@ -1,0 +1,13 @@
+{
+  "name": "Anki Sync Server",
+  "slug": "anki-sync",
+  "category": "Education",
+  "description": "Self-hosted sync for Anki flashcards",
+  "web_service": "anki",
+  "web_port": 8080,
+  "ram_mb": 160,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "In Anki: Preferences > Syncing > Self-hosted sync server: {{url}}/\nThen sync and log in with\nUser: admin\nPassword: {{password}}"
+}

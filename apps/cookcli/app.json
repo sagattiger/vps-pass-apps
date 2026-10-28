@@ -1,0 +1,13 @@
+{
+  "name": "CookCLI",
+  "slug": "cookcli",
+  "category": "Lifestyle",
+  "description": "Recipe book for Cooklang recipes",
+  "web_service": "web",
+  "web_port": 8080,
+  "ram_mb": 64,
+  "disk_mb": 256,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}"
+}
