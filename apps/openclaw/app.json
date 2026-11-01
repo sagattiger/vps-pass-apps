@@ -1,0 +1,13 @@
+{
+  "name": "OpenClaw",
+  "slug": "openclaw",
+  "category": "AI",
+  "description": "Personal AI agent (OpenClaw 2.0)",
+  "web_service": "openclaw",
+  "web_port": 18789,
+  "ram_mb": 1024,
+  "disk_mb": 4096,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open {{url}} and enter the gateway token in Settings:\n{{secret}}\nIf it says \"pairing required\", approve this browser in the VM:\ncd /opt/qsync/apps/{{app_id}} && docker compose -p qa{{app_id}} exec openclaw node openclaw.mjs devices list\nthen: ... devices approve <request id>"
+}

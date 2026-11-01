@@ -25,7 +25,7 @@ apps/<slug>/
 | [Chatwoot](apps/chatwoot) | `chatwoot` | Support | `rails:3000` | 2048 | 4096 | Q3 | Testing |
 | [Colanode](apps/colanode) | `colanode` | Documents & Notes | `web:8080` | 640 | 2048 | Q1 | Testing |
 | [CookCLI](apps/cookcli) | `cookcli` | Lifestyle | `web:8080` | 64 | 256 | Q1 | Testing |
-| [Docmost](apps/docmost) | `docmost` | Documents & Notes | `docmost:3000` | 512 | 2048 | Q1 | Testing |
+| [Docmost](apps/docmost) | `docmost` | Documents & Notes | `web:8080` | 528 | 2048 | Q1 | Testing |
 | [Docspell](apps/docspell) | `docspell` | Documents & Notes | `restserver:7880` | 2560 | 5120 | Q3 | Testing |
 | [DocuSeal](apps/docuseal) | `docuseal` | Documents & Notes | `docuseal:3000` | 384 | 2048 | Q1 | Testing |
 | [Evolution API](apps/evolution-api) | `evolution-api` | Messaging | `api:8080` | 768 | 3072 | Q1 | Testing |
@@ -46,6 +46,7 @@ apps/<slug>/
 | [Obsidian LiveSync](apps/obsidian-livesync) | `obsidian-livesync` | Documents & Notes | `couchdb:5984` | 256 | 1024 | Q1 | Testing |
 | [Ollama](apps/ollama) | `ollama` | AI | `proxy:8080` | 192 | 4096 | Q1 | Testing |
 | [OmniRoute](apps/omniroute) | `omniroute` | AI | `omniroute:20128` | 768 | 2048 | Q2 (Q1 R$ 3,99) | Testing |
+| [OpenClaw](apps/openclaw) | `openclaw` | AI | `openclaw:18789` | 1024 | 4096 | Q2 | Testing |
 | [Paperclip](apps/paperclip) | `paperclip` | AI | `paperclip:3100` | 1024 | 4096 | Q1 | Testing |
 | [Paperless-ngx](apps/paperless-ngx) | `paperless-ngx` | Documents & Notes | `webserver:8000` | 1024 | 4096 | Q1 | Testing |
 | [Uptime Kuma](apps/uptime-kuma) | `uptime-kuma` | Monitoring | `kuma:3001` | 256 | 1024 | Q1 | Testing |
@@ -55,7 +56,7 @@ apps/<slug>/
 
 NocoDB, WordPress, Flowise, Metabase and Chatwoot come only from the extension's starter apps (`Services/CoreCatalog.php` in the Proxmox extension repo) and keep their original plans. The starter list is only copied into the database once, so changes here must also be made in the admin catalogue.
 
-Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. AFFiNE and ArchiveBox (free from Q2) and Docspell (free from Q3) have no price yet.
+Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. OpenClaw, AFFiNE and ArchiveBox (free from Q2) and Docspell (free from Q3) have no price yet.
 
 **Not possible as a VPS Pass app:** any-sync (Anytype self-hosting) needs raw TCP 1001-1006 and UDP 1011-1016 and has no web interface; VPS Pass routes HTTP only.
 
