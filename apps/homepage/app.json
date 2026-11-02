@@ -1,0 +1,13 @@
+{
+  "name": "Homepage",
+  "slug": "homepage",
+  "category": "Dashboard",
+  "description": "Customizable start page for your apps and services",
+  "web_service": "web",
+  "web_port": 8080,
+  "ram_mb": 192,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nEdit the dashboard in the VM: docker run --rm -it -v qa{{app_id}}_config:/c alpine vi /c/services.yaml"
+}

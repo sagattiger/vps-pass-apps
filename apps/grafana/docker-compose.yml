@@ -1,0 +1,17 @@
+services:
+  grafana:
+    image: grafana/grafana:13.1.2
+    restart: unless-stopped
+    environment:
+      GF_SERVER_ROOT_URL: "{{url}}"
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: "{{password}}"
+      GF_SECURITY_SECRET_KEY: "{{secret}}"
+      GF_SECURITY_COOKIE_SECURE: "true"
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_DEFAULT_INSTANCE_NAME: "{{host}}"
+      TZ: "{{tz}}"
+    volumes:
+      - data:/var/lib/grafana
+volumes:
+  data: {}

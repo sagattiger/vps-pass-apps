@@ -33,10 +33,12 @@ apps/<slug>/
 | [Forgejo](apps/forgejo) | `forgejo` | Developer | `forgejo:3000` | 384 | 2048 | Q1 | Testing |
 | [Gitea](apps/gitea) | `gitea` | Developer | `gitea:3000` | 384 | 2048 | Q1 | Testing |
 | [GitLab](apps/gitlab) | `gitlab` | Developer | `gitlab:80` | 3072 | 10240 | Q1 | Testing |
+| [Grafana](apps/grafana) | `grafana` | Monitoring | `grafana:3000` | 256 | 1024 | Q1 | Testing |
 | [Hermes Agent](apps/hermes-agent) | `hermes-agent` | AI | `hermes:9119` | 1536 | 4096 | Q2 (Q1 R$ 6,99) | Testing |
 | [Homarr](apps/homarr) | `homarr` | Dashboard | `homarr:7575` | 384 | 1024 | Q1 | Testing |
 | [Home Assistant](apps/home-assistant) | `home-assistant` | Home automation | `homeassistant:8123` | 512 | 3072 | Q1 | Testing |
 | [Homelable](apps/homelable) | `homelable` | Monitoring | `frontend:80` | 256 | 1024 | Q1 | Testing |
+| [Homepage](apps/homepage) | `homepage` | Dashboard | `web:8080` | 192 | 512 | Q1 | Testing |
 | [Immich](apps/immich) | `immich` | Photos | `immich-server:2283` | 2560 | 10240 | Q2 (Q1 R$ 6,99) | Testing |
 | [Metabase](apps/metabase) | `metabase` | Analytics | `metabase:3000` | 1536 | 2048 | Q3 | Testing |
 | [n8n](apps/n8n) | `n8n` | Automation | `n8n:5678` | 512 | 2048 | Q1 | Testing |
@@ -46,6 +48,7 @@ apps/<slug>/
 | [Obsidian LiveSync](apps/obsidian-livesync) | `obsidian-livesync` | Documents & Notes | `couchdb:5984` | 256 | 1024 | Q1 | Testing |
 | [Ollama](apps/ollama) | `ollama` | AI | `proxy:8080` | 192 | 4096 | Q1 | Testing |
 | [OmniRoute](apps/omniroute) | `omniroute` | AI | `omniroute:20128` | 768 | 2048 | Q2 (Q1 R$ 3,99) | Testing |
+| [Open WebUI](apps/open-webui) | `open-webui` | AI | `open-webui:8080` | 1024 | 5120 | Q2 | Testing |
 | [OpenClaw](apps/openclaw) | `openclaw` | AI | `openclaw:18789` | 1024 | 4096 | Q2 | Testing |
 | [Paperclip](apps/paperclip) | `paperclip` | AI | `paperclip:3100` | 1024 | 4096 | Q1 | Testing |
 | [Paperless-ngx](apps/paperless-ngx) | `paperless-ngx` | Documents & Notes | `webserver:8000` | 1024 | 4096 | Q1 | Testing |
@@ -56,7 +59,7 @@ apps/<slug>/
 
 NocoDB, WordPress, Flowise, Metabase and Chatwoot come only from the extension's starter apps (`Services/CoreCatalog.php` in the Proxmox extension repo) and keep their original plans. The starter list is only copied into the database once, so changes here must also be made in the admin catalogue.
 
-Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. OpenClaw, AFFiNE and ArchiveBox (free from Q2) and Docspell (free from Q3) have no price yet.
+Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. OpenClaw, Open WebUI, AFFiNE and ArchiveBox (free from Q2) and Docspell (free from Q3) have no price yet.
 
 **Not possible as a VPS Pass app:** any-sync (Anytype self-hosting) needs raw TCP 1001-1006 and UDP 1011-1016 and has no web interface; VPS Pass routes HTTP only.
 

@@ -1,0 +1,13 @@
+{
+  "name": "Grafana",
+  "slug": "grafana",
+  "category": "Monitoring",
+  "description": "Dashboards for metrics and logs",
+  "web_service": "grafana",
+  "web_port": 3000,
+  "ram_mb": 256,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}"
+}

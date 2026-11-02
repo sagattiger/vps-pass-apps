@@ -1,0 +1,13 @@
+{
+  "name": "Open WebUI",
+  "slug": "open-webui",
+  "category": "AI",
+  "description": "ChatGPT-style chat for any AI model",
+  "web_service": "open-webui",
+  "web_port": 8080,
+  "ram_mb": 1024,
+  "disk_mb": 5120,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address and create the admin account (the first account is the admin).\nThen Admin Panel > Settings > Connections: add your OpenAI-compatible API key or Ollama server."
+}

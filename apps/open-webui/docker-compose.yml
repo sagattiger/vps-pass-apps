@@ -1,0 +1,14 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    restart: unless-stopped
+    environment:
+      WEBUI_SECRET_KEY: "{{secret}}"
+      WEBUI_URL: "{{url}}"
+      CORS_ALLOW_ORIGIN: "{{url}}"
+      ENABLE_OLLAMA_API: "false"
+      TZ: "{{tz}}"
+    volumes:
+      - data:/app/backend/data
+volumes:
+  data: {}
