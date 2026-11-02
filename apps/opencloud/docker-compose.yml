@@ -1,0 +1,21 @@
+services:
+  opencloud:
+    image: opencloudeu/opencloud-rolling:latest
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["opencloud init || true; exec opencloud server"]
+    environment:
+      OC_URL: "{{url}}"
+      OC_INSECURE: "true"
+      PROXY_TLS: "false"
+      PROXY_HTTP_ADDR: 0.0.0.0:9200
+      IDM_ADMIN_PASSWORD: "{{password}}"
+      IDM_CREATE_DEMO_USERS: "false"
+      OC_LOG_LEVEL: warn
+      TZ: "{{tz}}"
+    volumes:
+      - config:/etc/opencloud
+      - data:/var/lib/opencloud
+volumes:
+  config: {}
+  data: {}

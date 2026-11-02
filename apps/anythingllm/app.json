@@ -1,0 +1,13 @@
+{
+  "name": "AnythingLLM",
+  "slug": "anythingllm",
+  "category": "AI",
+  "description": "Chat with your documents, AI agents and workspaces",
+  "web_service": "anythingllm",
+  "web_port": 3001,
+  "ram_mb": 1024,
+  "disk_mb": 4096,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Password: {{password}}\nThen pick an LLM provider (OpenAI, Anthropic, Ollama, OpenRouter...) in the onboarding."
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Mautic",
+  "slug": "mautic",
+  "category": "Marketing",
+  "description": "Marketing automation, email campaigns and lead scoring",
+  "web_service": "mautic_web",
+  "web_port": 80,
+  "ram_mb": 1024,
+  "disk_mb": 3072,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{secret2}}!\nThen Settings > Configuration > Email Settings: add your SMTP / email provider."
+}

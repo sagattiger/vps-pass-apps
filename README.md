@@ -17,9 +17,11 @@ apps/<slug>/
 | App | Slug | Category | Web service:port | RAM MB | Disk MB | Free from | Status |
 |---|---|---|---|---|---|---|---|
 | [2FAuth](apps/2fauth) | `2fauth` | Security | `2fauth:8000` | 128 | 512 | Q1 | Testing |
+| [Activepieces](apps/activepieces) | `activepieces` | Automation | `activepieces:80` | 768 | 3072 | Q1 | Testing |
 | [Actual Budget](apps/actual-budget) | `actual-budget` | Finance | `actual:5006` | 192 | 512 | Q1 | Testing |
 | [AFFiNE](apps/affine) | `affine` | Documents & Notes | `affine:3010` | 1536 | 4096 | Q2 | Testing |
 | [Anki Sync Server](apps/anki-sync) | `anki-sync` | Education | `anki:8080` | 160 | 1024 | Q1 | Testing |
+| [AnythingLLM](apps/anythingllm) | `anythingllm` | AI | `anythingllm:3001` | 1024 | 4096 | Q2 | Testing |
 | [ArchiveBox](apps/archivebox) | `archivebox` | Archiving | `archivebox:8000` | 1024 | 6144 | Q2 | Testing |
 | [Audiobookshelf](apps/audiobookshelf) | `audiobookshelf` | Media | `audiobookshelf:80` | 256 | 5120 | Q1 | Testing |
 | [Baserow](apps/baserow) | `baserow` | Business | `baserow:80` | 1536 | 4096 | Q2 | Testing |
@@ -63,10 +65,12 @@ apps/<slug>/
 | [Kavita](apps/kavita) | `kavita` | Media | `kavita:5000` | 256 | 5120 | Q1 | Testing |
 | [Kimai](apps/kimai) | `kimai` | Business | `kimai:8001` | 384 | 1024 | Q1 | Testing |
 | [Leantime](apps/leantime) | `leantime` | Business | `leantime:8080` | 512 | 1536 | Q1 | Testing |
+| [LibreChat](apps/librechat) | `librechat` | AI | `librechat:3080` | 1536 | 4096 | Q2 | Testing |
 | [Linkding](apps/linkding) | `linkding` | Productivity | `linkding:9090` | 128 | 512 | Q1 | Testing |
 | [Listmonk](apps/listmonk) | `listmonk` | Marketing | `listmonk:9000` | 192 | 1024 | Q1 | Testing |
 | [Loki](apps/loki) | `loki` | Monitoring | `web:8080` | 384 | 4096 | Q1 | Testing |
 | [Mattermost](apps/mattermost) | `mattermost` | Business | `mattermost:8065` | 768 | 3072 | Q1 | Testing |
+| [Mautic](apps/mautic) | `mautic` | Marketing | `mautic_web:80` | 1024 | 3072 | Q2 | Testing |
 | [Mealie](apps/mealie) | `mealie` | Lifestyle | `mealie:9000` | 384 | 1024 | Q1 | Testing |
 | [Memos](apps/memos) | `memos` | Documents & Notes | `memos:5230` | 128 | 512 | Q1 | Testing |
 | [Metabase](apps/metabase) | `metabase` | Analytics | `metabase:3000` | 1536 | 2048 | Q3 | Testing |
@@ -81,10 +85,12 @@ apps/<slug>/
 | [OmniRoute](apps/omniroute) | `omniroute` | AI | `omniroute:20128` | 768 | 2048 | Q2 (Q1 R$ 3,99) | Testing |
 | [Open WebUI](apps/open-webui) | `open-webui` | AI | `open-webui:8080` | 1024 | 5120 | Q2 | Testing |
 | [OpenClaw](apps/openclaw) | `openclaw` | AI | `openclaw:18789` | 1024 | 4096 | Q2 | Testing |
+| [OpenCloud](apps/opencloud) | `opencloud` | Files | `opencloud:9200` | 768 | 5120 | Q1 | Testing |
 | [Paperclip](apps/paperclip) | `paperclip` | AI | `paperclip:3100` | 1024 | 4096 | Q1 | Testing |
 | [Paperless-AI](apps/paperless-ai) | `paperless-ai` | AI | `paperless-ai:3000` | 768 | 2048 | Q1 | Testing |
 | [Paperless-ngx](apps/paperless-ngx) | `paperless-ngx` | Documents & Notes | `webserver:8000` | 1024 | 4096 | Q1 | Testing |
 | [Planka](apps/planka) | `planka` | Productivity | `planka:1337` | 384 | 1024 | Q1 | Testing |
+| [Plausible](apps/plausible) | `plausible` | Analytics | `plausible:8000` | 1024 | 4096 | Q2 | Testing |
 | [Pocket ID](apps/pocket-id) | `pocket-id` | Security | `pocket-id:1411` | 64 | 256 | Q1 | Testing |
 | [PocketBase](apps/pocketbase) | `pocketbase` | Developer | `pocketbase:8090` | 64 | 512 | Q1 | Testing |
 | [Postiz](apps/postiz) | `postiz` | Marketing | `postiz:5000` | 2048 | 6144 | Q2 | Testing |
@@ -106,9 +112,11 @@ apps/<slug>/
 
 NocoDB, WordPress, Flowise, Metabase and Chatwoot come only from the extension's starter apps (`Services/CoreCatalog.php` in the Proxmox extension repo) and keep their original plans. The starter list is only copied into the database once, so changes here must also be made in the admin catalogue.
 
-Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. Without a price yet: AFFiNE, ArchiveBox, Baserow, Flowise, NocoDB, Odoo, Open WebUI, OpenClaw, Postiz, Stirling-PDF, Twenty, WordPress (free from Q2); Chatwoot, Docspell, ERPNext, Metabase (free from Q3).
+Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. Without a price yet: AFFiNE, AnythingLLM, ArchiveBox, Baserow, Flowise, LibreChat, Mautic, NocoDB, Odoo, Open WebUI, OpenClaw, Plausible, Postiz, Stirling-PDF, Twenty, WordPress (free from Q2); Chatwoot, Docspell, ERPNext, Metabase (free from Q3).
 
-**Not possible as a VPS Pass app:** any-sync (Anytype self-hosting) needs raw TCP 1001-1006 and UDP 1011-1016 and has no web interface; VPS Pass routes HTTP only.
+**Not possible as a VPS Pass app (yet):** any-sync (Anytype self-hosting) needs raw TCP 1001-1006 and UDP 1011-1016 and has no web interface. Typebot needs two public addresses (builder and viewer), and VPS Pass gives one per app. Dify's official setup is ~10 services plus config files from its repo; to be built and tested on a real VPS Pass. Documenso needs SMTP before the first login and a signing certificate; DocuSeal covers document signing.
+
+**CPU type:** Zipline and LibreChat (MongoDB) need AVX, which Proxmox's `x86-64-v2-AES` CPU type lacks; the VM needs `host` or `x86-64-v3`.
 
 ## Plans
 

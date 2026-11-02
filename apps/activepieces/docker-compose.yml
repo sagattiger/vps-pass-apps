@@ -1,0 +1,20 @@
+services:
+  activepieces:
+    image: activepieces/activepieces:latest
+    restart: unless-stopped
+    env_file:
+      - path: app.env
+        required: false
+    environment:
+      AP_FRONTEND_URL: "{{url}}"
+      AP_JWT_SECRET: "{{hex64}}"
+      AP_DB_TYPE: PGLITE
+      AP_REDIS_TYPE: MEMORY
+      AP_EXECUTION_MODE: UNSANDBOXED
+      AP_TELEMETRY_ENABLED: "false"
+      AP_WEBHOOK_TIMEOUT_SECONDS: "30"
+      TZ: "{{tz}}"
+    volumes:
+      - data:/root/.activepieces
+volumes:
+  data: {}

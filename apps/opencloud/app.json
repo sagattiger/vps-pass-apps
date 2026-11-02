@@ -1,0 +1,13 @@
+{
+  "name": "OpenCloud",
+  "slug": "opencloud",
+  "category": "Files",
+  "description": "File sync and sharing (lightweight Nextcloud alternative)",
+  "web_service": "opencloud",
+  "web_port": 9200,
+  "ram_mb": 768,
+  "disk_mb": 5120,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nDesktop and mobile apps: server {{url}}"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "LibreChat",
+  "slug": "librechat",
+  "category": "AI",
+  "description": "ChatGPT-style chat for many AI providers, with agents and search",
+  "web_service": "librechat",
+  "web_port": 3080,
+  "ram_mb": 1536,
+  "disk_mb": 4096,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address right away and register: the first account is the admin.\nAdd your API keys in the model menu (OpenAI, Anthropic, Google)."
+}

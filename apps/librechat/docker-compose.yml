@@ -1,0 +1,54 @@
+services:
+  librechat:
+    image: ghcr.io/danny-avila/librechat:latest
+    restart: unless-stopped
+    depends_on: [mongodb, meilisearch]
+    env_file:
+      - path: app.env
+        required: false
+    environment:
+      HOST: 0.0.0.0
+      PORT: "3080"
+      NODE_ENV: production
+      DOMAIN_CLIENT: "{{url}}"
+      DOMAIN_SERVER: "{{url}}"
+      TRUST_PROXY: "1"
+      MONGO_URI: "mongodb://mongodb:27017/LibreChat"
+      MEILI_HOST: "http://meilisearch:7700"
+      MEILI_MASTER_KEY: "{{secret2}}"
+      MEILI_NO_ANALYTICS: "true"
+      SEARCH: "true"
+      CREDS_KEY: "{{hex64}}"
+      JWT_SECRET: "{{secret}}"
+      JWT_REFRESH_SECRET: "{{secret2}}"
+      ALLOW_REGISTRATION: "true"
+      ALLOW_EMAIL_LOGIN: "true"
+      ALLOW_SOCIAL_LOGIN: "false"
+      OPENAI_API_KEY: user_provided
+      ANTHROPIC_API_KEY: user_provided
+      GOOGLE_KEY: user_provided
+    volumes:
+      - images:/app/client/public/images
+      - uploads:/app/uploads
+      - logs:/app/api/logs
+  mongodb:
+    image: mongo:7
+    restart: unless-stopped
+    command: ["mongod", "--noauth", "--bind_ip_all"]
+    volumes:
+      - mongo:/data/db
+  meilisearch:
+    image: getmeili/meilisearch:v1.7
+    restart: unless-stopped
+    environment:
+      MEILI_HOST: "http://meilisearch:7700"
+      MEILI_NO_ANALYTICS: "true"
+      MEILI_MASTER_KEY: "{{secret2}}"
+    volumes:
+      - meili:/meili_data
+volumes:
+  images: {}
+  uploads: {}
+  logs: {}
+  mongo: {}
+  meili: {}

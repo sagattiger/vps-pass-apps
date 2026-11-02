@@ -1,0 +1,13 @@
+{
+  "name": "Activepieces",
+  "slug": "activepieces",
+  "category": "Automation",
+  "description": "No-code workflow automation (Zapier alternative)",
+  "web_service": "activepieces",
+  "web_port": 80,
+  "ram_mb": 768,
+  "disk_mb": 3072,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away and sign up: the first account is the platform admin.\nWebhook URLs use {{url}}"
+}
