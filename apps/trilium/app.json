@@ -1,0 +1,13 @@
+{
+  "name": "Trilium Notes",
+  "slug": "trilium",
+  "category": "Documents & Notes",
+  "description": "Hierarchical notes and personal knowledge base",
+  "web_service": "trilium",
+  "web_port": 8080,
+  "ram_mb": 256,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away and set your password (Trilium is single-user)."
+}

@@ -1,0 +1,15 @@
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    restart: unless-stopped
+    environment:
+      ND_BASEURL: ""
+      ND_SCANSCHEDULE: 1h
+      ND_LOGLEVEL: info
+      TZ: "{{tz}}"
+    volumes:
+      - data:/data
+      - music:/music:ro
+volumes:
+  data: {}
+  music: {}

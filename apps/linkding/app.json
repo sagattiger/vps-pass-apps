@@ -1,0 +1,13 @@
+{
+  "name": "Linkding",
+  "slug": "linkding",
+  "category": "Productivity",
+  "description": "Bookmark manager",
+  "web_service": "linkding",
+  "web_port": 9090,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nBrowser extension: server {{url}} plus the API token from Settings > Integrations"
+}

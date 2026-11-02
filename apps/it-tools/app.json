@@ -1,0 +1,13 @@
+{
+  "name": "IT-Tools",
+  "slug": "it-tools",
+  "category": "Developer",
+  "description": "80+ handy tools for developers (JSON, hashes, JWT, UUID...)",
+  "web_service": "it-tools",
+  "web_port": 80,
+  "ram_mb": 32,
+  "disk_mb": 128,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address. No account needed: everything runs in your browser."
+}

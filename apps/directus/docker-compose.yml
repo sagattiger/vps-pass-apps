@@ -1,0 +1,21 @@
+services:
+  directus:
+    image: directus/directus:11
+    restart: unless-stopped
+    environment:
+      KEY: "{{secret2}}"
+      SECRET: "{{secret}}"
+      PUBLIC_URL: "{{url}}"
+      DB_CLIENT: sqlite3
+      DB_FILENAME: /directus/database/data.db
+      ADMIN_EMAIL: "{{email}}"
+      ADMIN_PASSWORD: "{{password}}"
+      WEBSOCKETS_ENABLED: "true"
+    volumes:
+      - database:/directus/database
+      - uploads:/directus/uploads
+      - extensions:/directus/extensions
+volumes:
+  database: {}
+  uploads: {}
+  extensions: {}

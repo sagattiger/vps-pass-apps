@@ -1,0 +1,13 @@
+{
+  "name": "Directus",
+  "slug": "directus",
+  "category": "Developer",
+  "description": "Headless CMS and instant REST/GraphQL API",
+  "web_service": "directus",
+  "web_port": 8055,
+  "ram_mb": 384,
+  "disk_mb": 1536,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Email: {{email}}\nPassword: {{password}}"
+}

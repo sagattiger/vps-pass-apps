@@ -1,0 +1,13 @@
+{
+  "name": "Grocy",
+  "slug": "grocy",
+  "category": "Lifestyle",
+  "description": "Groceries, pantry and household management",
+  "web_service": "web",
+  "web_port": 8080,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}"
+}

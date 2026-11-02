@@ -1,0 +1,13 @@
+{
+  "name": "Navidrome",
+  "slug": "navidrome",
+  "category": "Media",
+  "description": "Music streaming server (Subsonic compatible)",
+  "web_service": "navidrome",
+  "web_port": 4533,
+  "ram_mb": 128,
+  "disk_mb": 5120,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away and create the admin account.\nSubsonic apps (DSub, Symfonium, Feishin...): server {{url}}"
+}

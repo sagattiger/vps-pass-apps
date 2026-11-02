@@ -1,0 +1,35 @@
+services:
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on: [grocy]
+    environment:
+      LOGIN_PASSWORD: "{{password}}"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        HASH=$$(caddy hash-password --plaintext "$$LOGIN_PASSWORD")
+        cat > /etc/caddy/Caddyfile <<EOF
+        {
+          admin off
+        }
+        :8080 {
+          basic_auth {
+            admin $$HASH
+          }
+          reverse_proxy grocy:80
+        }
+        EOF
+        exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+  grocy:
+    image: lscr.io/linuxserver/grocy:latest
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "{{tz}}"
+    volumes:
+      - config:/config
+volumes:
+  config: {}

@@ -1,0 +1,13 @@
+{
+  "name": "code-server",
+  "slug": "code-server",
+  "category": "Developer",
+  "description": "VS Code in the browser",
+  "web_service": "code-server",
+  "web_port": 8443,
+  "ram_mb": 512,
+  "disk_mb": 3072,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Password: {{password}}\nsudo password (inside the editor terminal): {{password}}"
+}

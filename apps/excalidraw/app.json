@@ -1,0 +1,13 @@
+{
+  "name": "Excalidraw",
+  "slug": "excalidraw",
+  "category": "Productivity",
+  "description": "Hand-drawn style whiteboard and diagrams",
+  "web_service": "excalidraw",
+  "web_port": 80,
+  "ram_mb": 32,
+  "disk_mb": 256,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and draw. Drawings are saved in your browser; export or save files to keep them."
+}

@@ -1,0 +1,15 @@
+services:
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    restart: unless-stopped
+    environment:
+      PB_ADMIN_EMAIL: "{{email}}"
+      PB_ADMIN_PASSWORD: "{{password}}"
+    volumes:
+      - data:/pb_data
+      - public:/pb_public
+      - hooks:/pb_hooks
+volumes:
+  data: {}
+  public: {}
+  hooks: {}

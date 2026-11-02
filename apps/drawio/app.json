@@ -1,0 +1,13 @@
+{
+  "name": "draw.io",
+  "slug": "drawio",
+  "category": "Productivity",
+  "description": "Diagram editor (flowcharts, network, UML)",
+  "web_service": "drawio",
+  "web_port": 8080,
+  "ram_mb": 384,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and create a diagram. Save to your device, or connect Google Drive / OneDrive / GitHub in the app."
+}

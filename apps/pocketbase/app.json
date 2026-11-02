@@ -1,0 +1,13 @@
+{
+  "name": "PocketBase",
+  "slug": "pocketbase",
+  "category": "Developer",
+  "description": "Backend in one file: database, auth, files and realtime API",
+  "web_service": "pocketbase",
+  "web_port": 8090,
+  "ram_mb": 64,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Dashboard: {{url}}/_/\nEmail: {{email}}\nPassword: {{password}}"
+}

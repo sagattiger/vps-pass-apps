@@ -1,0 +1,11 @@
+services:
+  trilium:
+    image: triliumnext/trilium:latest
+    restart: unless-stopped
+    environment:
+      TRILIUM_DATA_DIR: /home/node/trilium-data
+      TZ: "{{tz}}"
+    volumes:
+      - data:/home/node/trilium-data
+volumes:
+  data: {}

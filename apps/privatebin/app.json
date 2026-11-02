@@ -1,0 +1,13 @@
+{
+  "name": "PrivateBin",
+  "slug": "privatebin",
+  "category": "Security",
+  "description": "Encrypted pastebin and one-time secret sharing",
+  "web_service": "privatebin",
+  "web_port": 8080,
+  "ram_mb": 64,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and paste. No account: texts are encrypted in the browser."
+}

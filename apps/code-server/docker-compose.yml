@@ -1,0 +1,16 @@
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "{{tz}}"
+      PASSWORD: "{{password}}"
+      SUDO_PASSWORD: "{{password}}"
+      PROXY_DOMAIN: "{{host}}"
+      DEFAULT_WORKSPACE: /config/workspace
+    volumes:
+      - config:/config
+volumes:
+  config: {}

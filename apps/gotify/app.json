@@ -1,0 +1,13 @@
+{
+  "name": "Gotify",
+  "slug": "gotify",
+  "category": "Notifications",
+  "description": "Self-hosted push notification server",
+  "web_service": "gotify",
+  "web_port": 80,
+  "ram_mb": 64,
+  "disk_mb": 256,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nAndroid app: server {{url}}"
+}
