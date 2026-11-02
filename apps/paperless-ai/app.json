@@ -1,0 +1,13 @@
+{
+  "name": "Paperless-AI",
+  "slug": "paperless-ai",
+  "category": "AI",
+  "description": "AI tagging and chat for Paperless-ngx documents",
+  "web_service": "paperless-ai",
+  "web_port": 3000,
+  "ram_mb": 768,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away and complete the setup: create your login, then connect Paperless-ngx (URL + API token) and an AI provider."
+}

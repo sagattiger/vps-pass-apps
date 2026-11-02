@@ -1,0 +1,13 @@
+services:
+  gatus:
+    image: ghcr.io/twin/gatus:v5.35.0
+    restart: unless-stopped
+    environment:
+      GATUS_CONFIG_PATH: /config/config.yaml
+      TZ: "{{tz}}"
+    volumes:
+      - config:/config
+      - data:/data
+volumes:
+  config: {}
+  data: {}

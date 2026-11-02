@@ -1,0 +1,13 @@
+{
+  "name": "Loki",
+  "slug": "loki",
+  "category": "Monitoring",
+  "description": "Log aggregation (data source for Grafana)",
+  "web_service": "web",
+  "web_port": 8080,
+  "ram_mb": 384,
+  "disk_mb": 4096,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nPush logs to {{url}}/loki/api/v1/push and add Loki in Grafana with this address and basic auth."
+}

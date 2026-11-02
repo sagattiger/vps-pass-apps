@@ -1,0 +1,13 @@
+{
+  "name": "Mealie",
+  "slug": "mealie",
+  "category": "Lifestyle",
+  "description": "Recipe manager and meal planner",
+  "web_service": "mealie",
+  "web_port": 9000,
+  "ram_mb": 384,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Email: {{email}}\nPassword: {{password}}"
+}

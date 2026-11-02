@@ -1,0 +1,13 @@
+{
+  "name": "Pocket ID",
+  "slug": "pocket-id",
+  "category": "Security",
+  "description": "Simple OIDC login provider with passkeys",
+  "web_service": "pocket-id",
+  "web_port": 1411,
+  "ram_mb": 64,
+  "disk_mb": 256,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open {{url}}/setup right away and register the admin with a passkey."
+}

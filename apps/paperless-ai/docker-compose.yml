@@ -1,0 +1,12 @@
+services:
+  paperless-ai:
+    image: clusterzx/paperless-ai:latest
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "{{tz}}"
+    volumes:
+      - data:/app/data
+volumes:
+  data: {}

@@ -1,0 +1,13 @@
+{
+  "name": "Zipline",
+  "slug": "zipline",
+  "category": "Files",
+  "description": "File, image and screenshot sharing (ShareX compatible)",
+  "web_service": "zipline",
+  "web_port": 3000,
+  "ram_mb": 384,
+  "disk_mb": 5120,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away and create the admin account in the setup page."
+}

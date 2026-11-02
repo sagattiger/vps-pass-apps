@@ -1,0 +1,13 @@
+{
+  "name": "Healthchecks",
+  "slug": "healthchecks",
+  "category": "Monitoring",
+  "description": "Cron job and background task monitoring",
+  "web_service": "healthchecks",
+  "web_port": 8000,
+  "ram_mb": 256,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Email: {{email}}\nPassword: {{password}}"
+}

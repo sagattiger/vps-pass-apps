@@ -1,0 +1,13 @@
+{
+  "name": "Ghost",
+  "slug": "ghost",
+  "category": "Websites",
+  "description": "Blog, newsletter and membership publishing",
+  "web_service": "ghost",
+  "web_port": 2368,
+  "ram_mb": 512,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open {{url}}/ghost right away and create the owner account.\nYour site: {{url}}"
+}

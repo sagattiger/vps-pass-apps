@@ -1,0 +1,14 @@
+services:
+  shlink:
+    image: shlinkio/shlink:stable
+    restart: unless-stopped
+    environment:
+      DEFAULT_DOMAIN: "{{host}}"
+      IS_HTTPS_ENABLED: "true"
+      INITIAL_API_KEY: "{{secret}}"
+      DEFAULT_BASE_URL_REDIRECT: "https://app.shlink.io"
+      TIMEZONE: "{{tz}}"
+    volumes:
+      - data:/etc/shlink/data
+volumes:
+  data: {}

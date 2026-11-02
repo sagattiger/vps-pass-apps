@@ -1,0 +1,22 @@
+services:
+  2fauth:
+    image: 2fauth/2fauth:latest
+    restart: unless-stopped
+    env_file:
+      - path: app.env
+        required: false
+    environment:
+      APP_NAME: 2FAuth
+      APP_ENV: local
+      APP_URL: "{{url}}"
+      TRUSTED_PROXIES: "*"
+      SITE_OWNER: "{{email}}"
+      LOG_CHANNEL: daily
+      DB_CONNECTION: sqlite
+      DB_DATABASE: /srv/database/database.sqlite
+      CACHE_DRIVER: file
+      SESSION_DRIVER: file
+    volumes:
+      - data:/2fauth
+volumes:
+  data: {}

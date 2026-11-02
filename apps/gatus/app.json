@@ -1,0 +1,13 @@
+{
+  "name": "Gatus",
+  "slug": "gatus",
+  "category": "Monitoring",
+  "description": "Status page and uptime checks from a YAML file",
+  "web_service": "gatus",
+  "web_port": 8080,
+  "ram_mb": 64,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Status page: {{url}}\nEdit the checks in the VM:\ndocker run --rm -it -v qa{{app_id}}_config:/c alpine vi /c/config.yaml\nthen: cd /opt/qsync/apps/{{app_id}} && docker compose -p qa{{app_id}} restart gatus"
+}

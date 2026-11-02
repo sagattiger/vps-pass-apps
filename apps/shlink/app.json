@@ -1,0 +1,13 @@
+{
+  "name": "Shlink",
+  "slug": "shlink",
+  "category": "Marketing",
+  "description": "URL shortener with stats and REST API",
+  "web_service": "shlink",
+  "web_port": 8080,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Short links: {{url}}/<code>\nManage them at https://app.shlink.io (Add server: URL {{url}}, API key {{secret}})\nor with the REST API (header X-Api-Key)."
+}

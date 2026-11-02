@@ -1,0 +1,11 @@
+services:
+  beszel:
+    image: henrygd/beszel:latest
+    restart: unless-stopped
+    environment:
+      APP_URL: "{{url}}"
+      TZ: "{{tz}}"
+    volumes:
+      - data:/beszel_data
+volumes:
+  data: {}

@@ -1,0 +1,13 @@
+{
+  "name": "Beszel",
+  "slug": "beszel",
+  "category": "Monitoring",
+  "description": "Lightweight server monitoring (CPU, RAM, disk, Docker stats)",
+  "web_service": "beszel",
+  "web_port": 8090,
+  "ram_mb": 64,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away and create the admin account.\nThen Add System: copy the agent command and run it on each server you want to monitor."
+}

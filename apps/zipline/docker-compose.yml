@@ -1,0 +1,36 @@
+services:
+  zipline:
+    image: ghcr.io/diced/zipline:latest
+    restart: unless-stopped
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    environment:
+      CORE_SECRET: "{{secret}}"
+      DATABASE_URL: "postgres://zipline:{{password}}@postgresql:5432/zipline"
+      DATASOURCE_TYPE: local
+      DATASOURCE_LOCAL_DIRECTORY: /zipline/uploads
+      TZ: "{{tz}}"
+    volumes:
+      - uploads:/zipline/uploads
+      - public:/zipline/public
+      - themes:/zipline/themes
+  postgresql:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: zipline
+      POSTGRES_USER: zipline
+      POSTGRES_PASSWORD: "{{password}}"
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U zipline -d zipline"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  uploads: {}
+  public: {}
+  themes: {}
+  db: {}

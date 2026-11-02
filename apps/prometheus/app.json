@@ -1,0 +1,13 @@
+{
+  "name": "Prometheus",
+  "slug": "prometheus",
+  "category": "Monitoring",
+  "description": "Metrics database and monitoring (data source for Grafana)",
+  "web_service": "web",
+  "web_port": 8080,
+  "ram_mb": 384,
+  "disk_mb": 4096,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nGrafana data source: {{url}} with basic auth (same user and password).\nEdit scrape targets in the VM:\ndocker run --rm -it -v qa{{app_id}}_config:/c alpine vi /c/prometheus.yml"
+}

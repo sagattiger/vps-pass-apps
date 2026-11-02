@@ -1,0 +1,32 @@
+services:
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on: [loki]
+    environment:
+      LOGIN_PASSWORD: "{{password}}"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        HASH=$$(caddy hash-password --plaintext "$$LOGIN_PASSWORD")
+        cat > /etc/caddy/Caddyfile <<EOF
+        {
+          admin off
+        }
+        :8080 {
+          basic_auth {
+            admin $$HASH
+          }
+          reverse_proxy loki:3100
+        }
+        EOF
+        exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+  loki:
+    image: grafana/loki:latest
+    restart: unless-stopped
+    command: ["-config.file=/etc/loki/local-config.yaml"]
+    volumes:
+      - data:/loki
+volumes:
+  data: {}

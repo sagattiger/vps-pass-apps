@@ -1,0 +1,37 @@
+services:
+  healthchecks:
+    image: healthchecks/healthchecks:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SECRET_KEY: "{{secret}}"
+      SITE_ROOT: "{{url}}"
+      SITE_NAME: Healthchecks
+      ALLOWED_HOSTS: "{{host}},localhost"
+      DEBUG: "False"
+      REGISTRATION_OPEN: "False"
+      DB: postgres
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: healthchecks
+      DB_USER: healthchecks
+      DB_PASSWORD: "{{password}}"
+      DEFAULT_FROM_EMAIL: "{{email}}"
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: healthchecks
+      POSTGRES_USER: healthchecks
+      POSTGRES_PASSWORD: "{{password}}"
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U healthchecks -d healthchecks"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  db: {}

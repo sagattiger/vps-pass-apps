@@ -1,0 +1,13 @@
+{
+  "name": "2FAuth",
+  "slug": "2fauth",
+  "category": "Security",
+  "description": "Two-factor authentication codes (TOTP/HOTP) in the browser",
+  "web_service": "2fauth",
+  "web_port": 8000,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away and register: the first account is the admin.\nThen turn off registration in the admin panel."
+}

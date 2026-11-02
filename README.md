@@ -16,6 +16,7 @@ apps/<slug>/
 
 | App | Slug | Category | Web service:port | RAM MB | Disk MB | Free from | Status |
 |---|---|---|---|---|---|---|---|
+| [2FAuth](apps/2fauth) | `2fauth` | Security | `2fauth:8000` | 128 | 512 | Q1 | Testing |
 | [Actual Budget](apps/actual-budget) | `actual-budget` | Finance | `actual:5006` | 192 | 512 | Q1 | Testing |
 | [AFFiNE](apps/affine) | `affine` | Documents & Notes | `affine:3010` | 1536 | 4096 | Q2 | Testing |
 | [Anki Sync Server](apps/anki-sync) | `anki-sync` | Education | `anki:8080` | 160 | 1024 | Q1 | Testing |
@@ -23,6 +24,7 @@ apps/<slug>/
 | [Audiobookshelf](apps/audiobookshelf) | `audiobookshelf` | Media | `audiobookshelf:80` | 256 | 5120 | Q1 | Testing |
 | [Baserow](apps/baserow) | `baserow` | Business | `baserow:80` | 1536 | 4096 | Q2 | Testing |
 | [BentoPDF](apps/bentopdf) | `bentopdf` | Documents & Notes | `bentopdf:8080` | 64 | 512 | Q1 | Testing |
+| [Beszel](apps/beszel) | `beszel` | Monitoring | `beszel:8090` | 64 | 512 | Q1 | Testing |
 | [BookStack](apps/bookstack) | `bookstack` | Documents & Notes | `bookstack:80` | 512 | 1536 | Q1 | Testing |
 | [Chatwoot](apps/chatwoot) | `chatwoot` | Support | `rails:3000` | 2048 | 4096 | Q3 | Testing |
 | [code-server](apps/code-server) | `code-server` | Developer | `code-server:8443` | 512 | 3072 | Q1 | Testing |
@@ -41,12 +43,15 @@ apps/<slug>/
 | [Flowise](apps/flowise) | `flowise` | AI | `flowise:3000` | 768 | 2048 | Q2 | Testing |
 | [Forgejo](apps/forgejo) | `forgejo` | Developer | `forgejo:3000` | 384 | 2048 | Q1 | Testing |
 | [FreshRSS](apps/freshrss) | `freshrss` | News | `freshrss:80` | 128 | 512 | Q1 | Testing |
+| [Gatus](apps/gatus) | `gatus` | Monitoring | `gatus:8080` | 64 | 512 | Q1 | Testing |
+| [Ghost](apps/ghost) | `ghost` | Websites | `ghost:2368` | 512 | 2048 | Q1 | Testing |
 | [Gitea](apps/gitea) | `gitea` | Developer | `gitea:3000` | 384 | 2048 | Q1 | Testing |
 | [GitLab](apps/gitlab) | `gitlab` | Developer | `gitlab:80` | 3072 | 10240 | Q1 | Testing |
 | [GLPI](apps/glpi) | `glpi` | Business | `glpi:80` | 512 | 2048 | Q1 | Testing |
 | [Gotify](apps/gotify) | `gotify` | Notifications | `gotify:80` | 64 | 256 | Q1 | Testing |
 | [Grafana](apps/grafana) | `grafana` | Monitoring | `grafana:3000` | 256 | 1024 | Q1 | Testing |
 | [Grocy](apps/grocy) | `grocy` | Lifestyle | `web:8080` | 128 | 512 | Q1 | Testing |
+| [Healthchecks](apps/healthchecks) | `healthchecks` | Monitoring | `healthchecks:8000` | 256 | 1024 | Q1 | Testing |
 | [Hermes Agent](apps/hermes-agent) | `hermes-agent` | AI | `hermes:9119` | 1536 | 4096 | Q2 (Q1 R$ 6,99) | Testing |
 | [Homarr](apps/homarr) | `homarr` | Dashboard | `homarr:7575` | 384 | 1024 | Q1 | Testing |
 | [Home Assistant](apps/home-assistant) | `home-assistant` | Home automation | `homeassistant:8123` | 512 | 3072 | Q1 | Testing |
@@ -60,7 +65,9 @@ apps/<slug>/
 | [Leantime](apps/leantime) | `leantime` | Business | `leantime:8080` | 512 | 1536 | Q1 | Testing |
 | [Linkding](apps/linkding) | `linkding` | Productivity | `linkding:9090` | 128 | 512 | Q1 | Testing |
 | [Listmonk](apps/listmonk) | `listmonk` | Marketing | `listmonk:9000` | 192 | 1024 | Q1 | Testing |
+| [Loki](apps/loki) | `loki` | Monitoring | `web:8080` | 384 | 4096 | Q1 | Testing |
 | [Mattermost](apps/mattermost) | `mattermost` | Business | `mattermost:8065` | 768 | 3072 | Q1 | Testing |
+| [Mealie](apps/mealie) | `mealie` | Lifestyle | `mealie:9000` | 384 | 1024 | Q1 | Testing |
 | [Memos](apps/memos) | `memos` | Documents & Notes | `memos:5230` | 128 | 512 | Q1 | Testing |
 | [Metabase](apps/metabase) | `metabase` | Analytics | `metabase:3000` | 1536 | 2048 | Q3 | Testing |
 | [n8n](apps/n8n) | `n8n` | Automation | `n8n:5678` | 512 | 2048 | Q1 | Testing |
@@ -75,12 +82,16 @@ apps/<slug>/
 | [Open WebUI](apps/open-webui) | `open-webui` | AI | `open-webui:8080` | 1024 | 5120 | Q2 | Testing |
 | [OpenClaw](apps/openclaw) | `openclaw` | AI | `openclaw:18789` | 1024 | 4096 | Q2 | Testing |
 | [Paperclip](apps/paperclip) | `paperclip` | AI | `paperclip:3100` | 1024 | 4096 | Q1 | Testing |
+| [Paperless-AI](apps/paperless-ai) | `paperless-ai` | AI | `paperless-ai:3000` | 768 | 2048 | Q1 | Testing |
 | [Paperless-ngx](apps/paperless-ngx) | `paperless-ngx` | Documents & Notes | `webserver:8000` | 1024 | 4096 | Q1 | Testing |
 | [Planka](apps/planka) | `planka` | Productivity | `planka:1337` | 384 | 1024 | Q1 | Testing |
+| [Pocket ID](apps/pocket-id) | `pocket-id` | Security | `pocket-id:1411` | 64 | 256 | Q1 | Testing |
 | [PocketBase](apps/pocketbase) | `pocketbase` | Developer | `pocketbase:8090` | 64 | 512 | Q1 | Testing |
 | [Postiz](apps/postiz) | `postiz` | Marketing | `postiz:5000` | 2048 | 6144 | Q2 | Testing |
 | [PrivateBin](apps/privatebin) | `privatebin` | Security | `privatebin:8080` | 64 | 512 | Q1 | Testing |
+| [Prometheus](apps/prometheus) | `prometheus` | Monitoring | `web:8080` | 384 | 4096 | Q1 | Testing |
 | [SearXNG](apps/searxng) | `searxng` | AI | `web:8080` | 256 | 512 | Q1 | Testing |
+| [Shlink](apps/shlink) | `shlink` | Marketing | `shlink:8080` | 128 | 512 | Q1 | Testing |
 | [Snipe-IT](apps/snipe-it) | `snipe-it` | Business | `snipeit:80` | 512 | 2048 | Q1 | Testing |
 | [Stirling-PDF](apps/stirling-pdf) | `stirling-pdf` | Documents & Notes | `stirling-pdf:8080` | 2048 | 4096 | Q2 | Testing |
 | [Trilium Notes](apps/trilium) | `trilium` | Documents & Notes | `trilium:8080` | 256 | 1024 | Q1 | Testing |
@@ -91,6 +102,7 @@ apps/<slug>/
 | [Vikunja](apps/vikunja) | `vikunja` | Productivity | `vikunja:3456` | 128 | 512 | Q1 | Testing |
 | [Wiki.js](apps/wiki-js) | `wiki-js` | Documents & Notes | `wiki:3000` | 512 | 1536 | Q1 | Testing |
 | [WordPress](apps/wordpress) | `wordpress` | Websites | `wordpress:80` | 512 | 3072 | Q2 | Testing |
+| [Zipline](apps/zipline) | `zipline` | Files | `zipline:3000` | 384 | 5120 | Q1 | Testing |
 
 NocoDB, WordPress, Flowise, Metabase and Chatwoot come only from the extension's starter apps (`Services/CoreCatalog.php` in the Proxmox extension repo) and keep their original plans. The starter list is only copied into the database once, so changes here must also be made in the admin catalogue.
 
