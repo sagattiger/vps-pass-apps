@@ -1,0 +1,13 @@
+{
+  "name": "Memos",
+  "slug": "memos",
+  "category": "Documents & Notes",
+  "description": "Lightweight notes and microblog",
+  "web_service": "memos",
+  "web_port": 5230,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and create your account: the first account is the admin."
+}

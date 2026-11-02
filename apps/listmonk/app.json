@@ -1,0 +1,13 @@
+{
+  "name": "Listmonk",
+  "slug": "listmonk",
+  "category": "Marketing",
+  "description": "Newsletters and mailing lists",
+  "web_service": "listmonk",
+  "web_port": 9000,
+  "ram_mb": 192,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Log in at {{url}}/admin\nUser: admin\nPassword: {{password}}\nSet your SMTP server in Settings > SMTP before sending."
+}

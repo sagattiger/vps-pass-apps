@@ -1,0 +1,27 @@
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:latest
+    restart: unless-stopped
+    environment:
+      SECURITY_ENABLELOGIN: "true"
+      SECURITY_INITIALLOGIN_USERNAME: admin
+      SECURITY_INITIALLOGIN_PASSWORD: "{{password}}"
+      DISABLE_ADDITIONAL_FEATURES: "false"
+      SYSTEM_BACKENDURL: "{{url}}"
+      SYSTEM_FRONTENDURL: "{{url}}"
+      SERVER_FORWARD_HEADERS_STRATEGY: native
+      SYSTEM_MAXFILESIZE: "250"
+      SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 250MB
+      SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 250MB
+      LANGS: en_GB
+      TZ: "{{tz}}"
+    volumes:
+      - configs:/configs
+      - storage:/storage
+      - logs:/logs
+      - pipeline:/pipeline
+volumes:
+  configs: {}
+  storage: {}
+  logs: {}
+  pipeline: {}

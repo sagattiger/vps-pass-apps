@@ -1,0 +1,13 @@
+{
+  "name": "Dolibarr",
+  "slug": "dolibarr",
+  "category": "Business",
+  "description": "ERP and CRM for small businesses",
+  "web_service": "dolibarr",
+  "web_port": 80,
+  "ram_mb": 512,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{secret2}}"
+}

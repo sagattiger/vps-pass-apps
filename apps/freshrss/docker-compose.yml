@@ -1,0 +1,16 @@
+services:
+  freshrss:
+    image: freshrss/freshrss:1
+    restart: unless-stopped
+    environment:
+      TZ: "{{tz}}"
+      CRON_MIN: "*/20"
+      TRUSTED_PROXY: "172.16.0.0/12 10.0.0.0/8 192.168.0.0/16"
+      FRESHRSS_INSTALL: "--api-enabled --base-url {{url}} --default-user admin --language en"
+      FRESHRSS_USER: "--api-password {{secret2}} --email {{email}} --language en --password {{password}} --user admin"
+    volumes:
+      - data:/var/www/FreshRSS/data
+      - extensions:/var/www/FreshRSS/extensions
+volumes:
+  data: {}
+  extensions: {}

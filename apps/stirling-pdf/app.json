@@ -1,0 +1,13 @@
+{
+  "name": "Stirling-PDF",
+  "slug": "stirling-pdf",
+  "category": "Documents & Notes",
+  "description": "Server-side PDF toolkit (merge, OCR, convert, sign)",
+  "web_service": "stirling-pdf",
+  "web_port": 8080,
+  "ram_mb": 2048,
+  "disk_mb": 4096,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}"
+}

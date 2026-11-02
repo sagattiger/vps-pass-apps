@@ -1,0 +1,36 @@
+services:
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on: [searxng]
+    environment:
+      LOGIN_PASSWORD: "{{password}}"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        HASH=$$(caddy hash-password --plaintext "$$LOGIN_PASSWORD")
+        cat > /etc/caddy/Caddyfile <<EOF
+        {
+          admin off
+        }
+        :8080 {
+          basic_auth {
+            admin $$HASH
+          }
+          reverse_proxy searxng:8080
+        }
+        EOF
+        exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+  searxng:
+    image: searxng/searxng:latest
+    restart: unless-stopped
+    environment:
+      SEARXNG_BASE_URL: "{{url}}/"
+      SEARXNG_SECRET: "{{secret}}"
+    volumes:
+      - config:/etc/searxng
+      - cache:/var/cache/searxng
+volumes:
+  config: {}
+  cache: {}

@@ -1,0 +1,10 @@
+services:
+  memos:
+    image: neosmemo/memos:stable
+    restart: unless-stopped
+    environment:
+      TZ: "{{tz}}"
+    volumes:
+      - data:/var/opt/memos
+volumes:
+  data: {}

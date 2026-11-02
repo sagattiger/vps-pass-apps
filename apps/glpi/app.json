@@ -1,0 +1,13 @@
+{
+  "name": "GLPI",
+  "slug": "glpi",
+  "category": "Business",
+  "description": "IT service desk and asset management",
+  "web_service": "glpi",
+  "web_port": 80,
+  "ram_mb": 512,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: glpi\nPassword: {{secret2}}\n(The demo accounts tech, normal and post-only are disabled.)"
+}

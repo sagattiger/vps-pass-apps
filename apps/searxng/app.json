@@ -1,0 +1,13 @@
+{
+  "name": "SearXNG",
+  "slug": "searxng",
+  "category": "AI",
+  "description": "Private metasearch engine (web search for AI apps)",
+  "web_service": "web",
+  "web_port": 8080,
+  "ram_mb": 256,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nOpen WebUI / AI agents search URL:\nhttps://admin:{{password}}@{{host}}/search?q=<query>&format=json"
+}

@@ -1,0 +1,17 @@
+services:
+  vikunja:
+    image: vikunja/vikunja:latest
+    restart: unless-stopped
+    environment:
+      VIKUNJA_SERVICE_PUBLICURL: "{{url}}/"
+      VIKUNJA_SERVICE_SECRET: "{{secret}}"
+      VIKUNJA_SERVICE_JWTSECRET: "{{secret}}"
+      VIKUNJA_SERVICE_TIMEZONE: "{{tz}}"
+      VIKUNJA_DATABASE_TYPE: sqlite
+      VIKUNJA_DATABASE_PATH: /db/vikunja.db
+    volumes:
+      - files:/app/vikunja/files
+      - db:/db
+volumes:
+  files: {}
+  db: {}

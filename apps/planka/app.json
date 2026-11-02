@@ -1,0 +1,13 @@
+{
+  "name": "Planka",
+  "slug": "planka",
+  "category": "Productivity",
+  "description": "Kanban boards (Trello alternative)",
+  "web_service": "planka",
+  "web_port": 1337,
+  "ram_mb": 384,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Email: {{email}}\nUser: admin\nPassword: {{password}}"
+}

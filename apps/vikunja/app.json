@@ -1,0 +1,13 @@
+{
+  "name": "Vikunja",
+  "slug": "vikunja",
+  "category": "Productivity",
+  "description": "Tasks, lists and project boards",
+  "web_service": "vikunja",
+  "web_port": 3456,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and register your account.\nThen turn off registration (see the app README) if only you will use it."
+}

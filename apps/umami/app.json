@@ -1,0 +1,13 @@
+{
+  "name": "Umami",
+  "slug": "umami",
+  "category": "Analytics",
+  "description": "Privacy-friendly website analytics",
+  "web_service": "umami",
+  "web_port": 3000,
+  "ram_mb": 384,
+  "disk_mb": 1536,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nAdd a website in Settings and paste its tracking script into your site."
+}

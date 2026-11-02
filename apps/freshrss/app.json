@@ -1,0 +1,13 @@
+{
+  "name": "FreshRSS",
+  "slug": "freshrss",
+  "category": "News",
+  "description": "RSS and news reader",
+  "web_service": "freshrss",
+  "web_port": 80,
+  "ram_mb": 128,
+  "disk_mb": 512,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "User: admin\nPassword: {{password}}\nMobile apps (API): {{url}}/api/greader.php, user admin, API password {{secret2}}"
+}
