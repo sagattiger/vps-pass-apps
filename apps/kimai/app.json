@@ -1,0 +1,13 @@
+{
+  "name": "Kimai",
+  "slug": "kimai",
+  "category": "Business",
+  "description": "Time tracking and timesheets",
+  "web_service": "kimai",
+  "web_port": 8001,
+  "ram_mb": 384,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Email: {{email}}\nPassword: {{password}}"
+}

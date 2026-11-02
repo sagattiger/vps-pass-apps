@@ -1,0 +1,13 @@
+{
+  "name": "Baserow",
+  "slug": "baserow",
+  "category": "Business",
+  "description": "No-code database (Airtable alternative)",
+  "web_service": "baserow",
+  "web_port": 80,
+  "ram_mb": 1536,
+  "disk_mb": 4096,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address and create your account: the first account is the instance admin."
+}

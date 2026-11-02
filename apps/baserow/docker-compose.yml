@@ -1,0 +1,13 @@
+services:
+  baserow:
+    image: baserow/baserow:2.4.1
+    restart: unless-stopped
+    environment:
+      BASEROW_PUBLIC_URL: "{{url}}"
+      BASEROW_CADDY_ADDRESSES: ":80"
+      BASEROW_AMOUNT_OF_WORKERS: "1"
+      TZ: "{{tz}}"
+    volumes:
+      - data:/baserow/data
+volumes:
+  data: {}

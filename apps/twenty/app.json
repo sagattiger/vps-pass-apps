@@ -1,0 +1,13 @@
+{
+  "name": "Twenty",
+  "slug": "twenty",
+  "category": "Business",
+  "description": "Modern open-source CRM (Salesforce alternative)",
+  "web_service": "server",
+  "web_port": 3000,
+  "ram_mb": 1536,
+  "disk_mb": 4096,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address and sign up: the first account creates the workspace."
+}

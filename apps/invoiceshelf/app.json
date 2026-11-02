@@ -1,0 +1,13 @@
+{
+  "name": "InvoiceShelf",
+  "slug": "invoiceshelf",
+  "category": "Business",
+  "description": "Invoices, estimates, expenses and payments",
+  "web_service": "invoiceshelf",
+  "web_port": 8080,
+  "ram_mb": 256,
+  "disk_mb": 1024,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away and follow the installer: keep SQLite, then create your company and admin account."
+}

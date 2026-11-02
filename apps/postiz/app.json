@@ -1,0 +1,13 @@
+{
+  "name": "Postiz",
+  "slug": "postiz",
+  "category": "Marketing",
+  "description": "Social media scheduling for 20+ networks",
+  "web_service": "postiz",
+  "web_port": 5000,
+  "ram_mb": 2048,
+  "disk_mb": 6144,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Open the address and register: the first account owns the workspace.\nThen connect your social networks (each needs its own API app; see the Postiz docs)."
+}

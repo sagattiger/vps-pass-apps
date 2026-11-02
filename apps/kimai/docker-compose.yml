@@ -1,0 +1,37 @@
+services:
+  kimai:
+    image: kimai/kimai2:apache
+    restart: unless-stopped
+    depends_on:
+      sqldb:
+        condition: service_healthy
+    environment:
+      ADMINMAIL: "{{email}}"
+      ADMINPASS: "{{password}}"
+      DATABASE_URL: "mysql://kimai:{{password}}@sqldb/kimai?charset=utf8mb4&serverVersion=11.4.0-MariaDB"
+      TRUSTED_HOSTS: "{{host}},localhost,127.0.0.1"
+      TRUSTED_PROXIES: "127.0.0.1,REMOTE_ADDR"
+      APP_SECRET: "{{secret}}"
+      TZ: "{{tz}}"
+    volumes:
+      - data:/opt/kimai/var/data
+      - plugins:/opt/kimai/var/plugins
+  sqldb:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: kimai
+      MARIADB_USER: kimai
+      MARIADB_PASSWORD: "{{password}}"
+      MARIADB_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  data: {}
+  plugins: {}
+  db: {}

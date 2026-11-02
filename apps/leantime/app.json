@@ -1,0 +1,13 @@
+{
+  "name": "Leantime",
+  "slug": "leantime",
+  "category": "Business",
+  "description": "Project management for non-project managers",
+  "web_service": "leantime",
+  "web_port": 8080,
+  "ram_mb": 512,
+  "disk_mb": 1536,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away: the installer creates the database and your admin account."
+}

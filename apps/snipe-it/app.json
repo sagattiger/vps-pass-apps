@@ -1,0 +1,13 @@
+{
+  "name": "Snipe-IT",
+  "slug": "snipe-it",
+  "category": "Business",
+  "description": "IT asset and license management",
+  "web_service": "snipeit",
+  "web_port": 80,
+  "ram_mb": 512,
+  "disk_mb": 2048,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address right away: the setup wizard checks the system and creates the admin account."
+}

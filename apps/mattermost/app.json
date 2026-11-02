@@ -1,0 +1,13 @@
+{
+  "name": "Mattermost",
+  "slug": "mattermost",
+  "category": "Business",
+  "description": "Team chat (Slack alternative)",
+  "web_service": "mattermost",
+  "web_port": 8065,
+  "ram_mb": 768,
+  "disk_mb": 3072,
+  "free_from": "Q1",
+  "status": "Testing",
+  "login_info": "Open the address and create your account: the first account is the system admin.\nDesktop and mobile apps: server {{url}}"
+}

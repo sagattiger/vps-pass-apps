@@ -1,0 +1,55 @@
+x-twenty-env: &env
+  NODE_PORT: "3000"
+  PG_DATABASE_URL: "postgres://twenty:{{password}}@db:5432/twenty"
+  SERVER_URL: "{{url}}"
+  REDIS_URL: "redis://redis:6379"
+  STORAGE_TYPE: local
+  APP_SECRET: "{{secret}}"
+services:
+  server:
+    image: twentycrm/twenty:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment: *env
+    volumes:
+      - storage:/app/packages/twenty-server/.local-storage
+  worker:
+    image: twentycrm/twenty:latest
+    restart: unless-stopped
+    command: ["yarn", "worker:prod"]
+    depends_on:
+      db:
+        condition: service_healthy
+      server:
+        condition: service_started
+    environment:
+      <<: *env
+      DISABLE_DB_MIGRATIONS: "true"
+      DISABLE_CRON_JOBS_REGISTRATION: "true"
+    volumes:
+      - storage:/app/packages/twenty-server/.local-storage
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: twenty
+      POSTGRES_USER: twenty
+      POSTGRES_PASSWORD: "{{password}}"
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U twenty -d twenty"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--maxmemory-policy", "noeviction"]
+volumes:
+  storage: {}
+  db: {}

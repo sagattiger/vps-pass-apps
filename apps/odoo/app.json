@@ -1,0 +1,13 @@
+{
+  "name": "Odoo",
+  "slug": "odoo",
+  "category": "Business",
+  "description": "ERP, CRM, invoicing, inventory and website (Community)",
+  "web_service": "odoo",
+  "web_port": 8069,
+  "ram_mb": 1536,
+  "disk_mb": 4096,
+  "free_from": "Q2",
+  "status": "Testing",
+  "login_info": "Email/login: admin\nPassword: {{secret2}}\nChange the admin login to your email in Settings > Users."
+}

@@ -20,6 +20,7 @@ apps/<slug>/
 | [AFFiNE](apps/affine) | `affine` | Documents & Notes | `affine:3010` | 1536 | 4096 | Q2 | Testing |
 | [Anki Sync Server](apps/anki-sync) | `anki-sync` | Education | `anki:8080` | 160 | 1024 | Q1 | Testing |
 | [ArchiveBox](apps/archivebox) | `archivebox` | Archiving | `archivebox:8000` | 1024 | 6144 | Q2 | Testing |
+| [Baserow](apps/baserow) | `baserow` | Business | `baserow:80` | 1536 | 4096 | Q2 | Testing |
 | [BentoPDF](apps/bentopdf) | `bentopdf` | Documents & Notes | `bentopdf:8080` | 64 | 512 | Q1 | Testing |
 | [BookStack](apps/bookstack) | `bookstack` | Documents & Notes | `bookstack:80` | 512 | 1536 | Q1 | Testing |
 | [Chatwoot](apps/chatwoot) | `chatwoot` | Support | `rails:3000` | 2048 | 4096 | Q3 | Testing |
@@ -29,6 +30,7 @@ apps/<slug>/
 | [Docspell](apps/docspell) | `docspell` | Documents & Notes | `restserver:7880` | 2560 | 5120 | Q3 | Testing |
 | [DocuSeal](apps/docuseal) | `docuseal` | Documents & Notes | `docuseal:3000` | 384 | 2048 | Q1 | Testing |
 | [Dolibarr](apps/dolibarr) | `dolibarr` | Business | `dolibarr:80` | 512 | 2048 | Q1 | Testing |
+| [ERPNext](apps/erpnext) | `erpnext` | Business | `frontend:8080` | 3072 | 8192 | Q3 | Testing |
 | [Evolution API](apps/evolution-api) | `evolution-api` | Messaging | `api:8080` | 768 | 3072 | Q1 | Testing |
 | [Flowise](apps/flowise) | `flowise` | AI | `flowise:3000` | 768 | 2048 | Q2 | Testing |
 | [Forgejo](apps/forgejo) | `forgejo` | Developer | `forgejo:3000` | 384 | 2048 | Q1 | Testing |
@@ -43,7 +45,11 @@ apps/<slug>/
 | [Homelable](apps/homelable) | `homelable` | Monitoring | `frontend:80` | 256 | 1024 | Q1 | Testing |
 | [Homepage](apps/homepage) | `homepage` | Dashboard | `web:8080` | 192 | 512 | Q1 | Testing |
 | [Immich](apps/immich) | `immich` | Photos | `immich-server:2283` | 2560 | 10240 | Q2 (Q1 R$ 6,99) | Testing |
+| [InvoiceShelf](apps/invoiceshelf) | `invoiceshelf` | Business | `invoiceshelf:8080` | 256 | 1024 | Q1 | Testing |
+| [Kimai](apps/kimai) | `kimai` | Business | `kimai:8001` | 384 | 1024 | Q1 | Testing |
+| [Leantime](apps/leantime) | `leantime` | Business | `leantime:8080` | 512 | 1536 | Q1 | Testing |
 | [Listmonk](apps/listmonk) | `listmonk` | Marketing | `listmonk:9000` | 192 | 1024 | Q1 | Testing |
+| [Mattermost](apps/mattermost) | `mattermost` | Business | `mattermost:8065` | 768 | 3072 | Q1 | Testing |
 | [Memos](apps/memos) | `memos` | Documents & Notes | `memos:5230` | 128 | 512 | Q1 | Testing |
 | [Metabase](apps/metabase) | `metabase` | Analytics | `metabase:3000` | 1536 | 2048 | Q3 | Testing |
 | [n8n](apps/n8n) | `n8n` | Automation | `n8n:5678` | 512 | 2048 | Q1 | Testing |
@@ -51,6 +57,7 @@ apps/<slug>/
 | [NocoDB](apps/nocodb) | `nocodb` | Productivity | `nocodb:8080` | 384 | 1024 | Q2 | Testing |
 | [ntfy](apps/ntfy) | `ntfy` | Notifications | `ntfy:80` | 128 | 512 | Q1 | Testing |
 | [Obsidian LiveSync](apps/obsidian-livesync) | `obsidian-livesync` | Documents & Notes | `couchdb:5984` | 256 | 1024 | Q1 | Testing |
+| [Odoo](apps/odoo) | `odoo` | Business | `odoo:8069` | 1536 | 4096 | Q2 | Testing |
 | [Ollama](apps/ollama) | `ollama` | AI | `proxy:8080` | 192 | 4096 | Q1 | Testing |
 | [OmniRoute](apps/omniroute) | `omniroute` | AI | `omniroute:20128` | 768 | 2048 | Q2 (Q1 R$ 3,99) | Testing |
 | [Open WebUI](apps/open-webui) | `open-webui` | AI | `open-webui:8080` | 1024 | 5120 | Q2 | Testing |
@@ -58,8 +65,11 @@ apps/<slug>/
 | [Paperclip](apps/paperclip) | `paperclip` | AI | `paperclip:3100` | 1024 | 4096 | Q1 | Testing |
 | [Paperless-ngx](apps/paperless-ngx) | `paperless-ngx` | Documents & Notes | `webserver:8000` | 1024 | 4096 | Q1 | Testing |
 | [Planka](apps/planka) | `planka` | Productivity | `planka:1337` | 384 | 1024 | Q1 | Testing |
+| [Postiz](apps/postiz) | `postiz` | Marketing | `postiz:5000` | 2048 | 6144 | Q2 | Testing |
 | [SearXNG](apps/searxng) | `searxng` | AI | `web:8080` | 256 | 512 | Q1 | Testing |
+| [Snipe-IT](apps/snipe-it) | `snipe-it` | Business | `snipeit:80` | 512 | 2048 | Q1 | Testing |
 | [Stirling-PDF](apps/stirling-pdf) | `stirling-pdf` | Documents & Notes | `stirling-pdf:8080` | 2048 | 4096 | Q2 | Testing |
+| [Twenty](apps/twenty) | `twenty` | Business | `server:3000` | 1536 | 4096 | Q2 | Testing |
 | [Umami](apps/umami) | `umami` | Analytics | `umami:3000` | 384 | 1536 | Q1 | Testing |
 | [Uptime Kuma](apps/uptime-kuma) | `uptime-kuma` | Monitoring | `kuma:3001` | 256 | 1024 | Q1 | Testing |
 | [Vaultwarden](apps/vaultwarden) | `vaultwarden` | Security | `vaultwarden:80` | 128 | 512 | Q1 | Testing |
@@ -69,7 +79,7 @@ apps/<slug>/
 
 NocoDB, WordPress, Flowise, Metabase and Chatwoot come only from the extension's starter apps (`Services/CoreCatalog.php` in the Proxmox extension repo) and keep their original plans. The starter list is only copied into the database once, so changes here must also be made in the admin catalogue.
 
-Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. OpenClaw, Open WebUI, Stirling-PDF, AFFiNE and ArchiveBox (free from Q2) and Docspell (free from Q3) have no price yet.
+Paid prices (Q1 price products, type *Core VPS app*): Immich and Hermes Agent R$ 6,99/month, OmniRoute R$ 3,99/month. OpenClaw, Open WebUI, Stirling-PDF, AFFiNE, ArchiveBox, Odoo, Baserow, Twenty and Postiz (free from Q2), and Docspell and ERPNext (free from Q3), have no price yet.
 
 **Not possible as a VPS Pass app:** any-sync (Anytype self-hosting) needs raw TCP 1001-1006 and UDP 1011-1016 and has no web interface; VPS Pass routes HTTP only.
 

@@ -1,0 +1,27 @@
+services:
+  invoiceshelf:
+    image: invoiceshelf/invoiceshelf:latest
+    restart: unless-stopped
+    env_file:
+      - path: app.env
+        required: false
+    environment:
+      APP_NAME: InvoiceShelf
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_URL: "{{url}}"
+      DB_CONNECTION: sqlite
+      DB_DATABASE: /var/www/html/storage/app/database.sqlite
+      CACHE_STORE: file
+      SESSION_DRIVER: file
+      SESSION_LIFETIME: "240"
+      SESSION_DOMAIN: "{{host}}"
+      SANCTUM_STATEFUL_DOMAINS: "{{host}}"
+      TRUSTED_PROXIES: "*"
+      TZ: "{{tz}}"
+    volumes:
+      - storage:/var/www/html/storage
+      - modules:/var/www/html/Modules
+volumes:
+  storage: {}
+  modules: {}

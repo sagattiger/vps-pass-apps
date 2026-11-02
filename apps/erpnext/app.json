@@ -1,0 +1,13 @@
+{
+  "name": "ERPNext",
+  "slug": "erpnext",
+  "category": "Business",
+  "description": "Full ERP: accounting, stock, sales, HR, manufacturing",
+  "web_service": "frontend",
+  "web_port": 8080,
+  "ram_mb": 3072,
+  "disk_mb": 8192,
+  "free_from": "Q3",
+  "status": "Testing",
+  "login_info": "User: Administrator\nPassword: {{secret2}}\nThe setup wizard (company, country, currency) opens after the first login."
+}
