@@ -33,7 +33,9 @@ Open the address and create the admin account.
 
 ## Image tags
 
-`flowiseai/flowise:latest`. Flowise also publishes version tags: pin to one once tested.
+`flowiseai/flowise:3.1.3`, pinned on purpose. **Never use `latest`:** images built after `connect-sqlite3` 0.9.17 was published (including `latest` and 3.1.4) crash at start with `TypeError: this.db.exec is not a function` (restart loop, 502 in the browser). The official 3.1.3 image was built before that change and starts ([Flowise#6688](https://github.com/FlowiseAI/Flowise/issues/6688)). The `@smithy/eventstream-codec` error still printed at start only disables the AWS Bedrock node; the server runs.
+
+**Flowise is end-of-life** (announced 2026-08-03, repo archived in August 2026): no more official releases or security fixes. The 3.1.3 image reportedly contains the 3.1.2 server code. Treat it as legacy: keep it for existing customers, and point new AI-flow customers to Activepieces, n8n, LibreChat or AnythingLLM. A community fork exists (Flow-Wiser, `dblagbro/flow-wiser`), not affiliated with FlowiseAI and not tested here.
 
 ## First login
 

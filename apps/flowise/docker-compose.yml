@@ -1,7 +1,7 @@
 services:
   flowise:
     restart: unless-stopped
-    image: flowiseai/flowise:latest
+    image: flowiseai/flowise:3.1.3
     environment:
       PORT: "3000"
     volumes:
