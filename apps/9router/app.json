@@ -1,0 +1,14 @@
+{
+  "name": "9Router",
+  "slug": "9router",
+  "category": "AI",
+  "description": "AI gateway: one endpoint for Claude Code, Codex, Cursor and 40+ providers",
+  "web_service": "9router",
+  "web_port": 20128,
+  "ram_mb": 512,
+  "disk_mb": 1536,
+  "free_from": "Q2",
+  "q1_price": "R$ 3,99",
+  "status": "Testing",
+  "login_info": "Dashboard password: {{password}}\nAPI base URL: {{url}}/v1 (create a key under Endpoint & Key)"
+}

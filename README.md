@@ -17,6 +17,7 @@ apps/<slug>/
 | App | Slug | Category | Web service:port | RAM MB | Disk MB | Free from | Status |
 |---|---|---|---|---|---|---|---|
 | [2FAuth](apps/2fauth) | `2fauth` | Security | `2fauth:8000` | 128 | 512 | Q1 | Testing |
+| [9Router](apps/9router) | `9router` | AI | `9router:20128` | 512 | 1536 | Q2 (Q1 R$ 3,99) | Testing |
 | [Activepieces](apps/activepieces) | `activepieces` | Automation | `activepieces:80` | 768 | 3072 | Q1 | Testing |
 | [Actual Budget](apps/actual-budget) | `actual-budget` | Finance | `actual:5006` | 192 | 512 | Q1 | Testing |
 | [AFFiNE](apps/affine) | `affine` | Documents & Notes | `affine:3010` | 1536 | 4096 | Q2 | Testing |
