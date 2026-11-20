@@ -32,10 +32,10 @@ if [ ! -f /home/node/.openclaw/openclaw.json ]; then
 cat > /home/node/.openclaw/openclaw.json <<"JSON"
 {
   gateway: {
+    mode: "local",
     bind: "lan",
     port: 18789,
     publicOrigin: "{{url}}",
-    trustedProxies: ["172.16.0.0/12", "10.0.0.0/8", "192.168.0.0/16"],
     auth: { mode: "token", token: "${OPENCLAW_GATEWAY_TOKEN}" },
   },
 }
@@ -72,7 +72,8 @@ then: ... devices approve <request id>
 
 ## Admin checks
 
-- **Run once** writes `openclaw.json` (only if it doesn't exist yet): `bind: lan`, port 18789, `publicOrigin: {{url}}` (the browser-origin check, so the Control UI works behind Zoraxy + both Traefiks), `trustedProxies` (Docker private ranges in the VM) and token auth. The token itself stays in the `OPENCLAW_GATEWAY_TOKEN` variable, not in the file.
+- **Run once** writes `openclaw.json` (only if it doesn't exist yet): `mode: local` (the gateway **refuses to start** without it, unless started with `--allow-unconfigured`, which the command also passes), `bind: lan`, port 18789, `publicOrigin: {{url}}` (the browser-origin check, so the Control UI works behind Zoraxy + both Traefiks; `controlUi.allowedOrigins` defaults to it) and token auth. No `trustedProxies`: the docs only show single IPs, not ranges.
+- **404 after install** = the gateway isn't running or the image's built-in `HEALTHCHECK` (`/healthz`) isn't passing yet; Traefik doesn't route to unhealthy containers. Check `docker compose -p qa<id> ps` and the logs. The token itself stays in the `OPENCLAW_GATEWAY_TOKEN` variable, not in the file.
 - **Auth:** token mode, token = `{{secret}}`. Browser pairing stays on (OpenClaw's recommendation); the first browser is approved with the `devices approve` command above. Never set the retired `dangerouslyDisableDeviceAuth`.
 - **No Docker sandbox:** 2.0's Docker/Podman sandbox needs the Docker socket, which VPS Pass templates don't allow (it's off by default anyway). The agent's tools run inside its own container, with `no-new-privileges` and `NET_RAW`/`NET_ADMIN` dropped, as in the upstream compose.
 - **Ports:** only the gateway port (Control UI + API + WebSocket) is routed. The bridge port 18790 and the Teams port 3978 aren't exposed (one HTTP address per app); Telegram/WhatsApp/Discord channels connect outwards and work.
