@@ -26,23 +26,32 @@ Paste [`docker-compose.yml`](docker-compose.yml) as it is. The installer adds th
 Paste [`setup.sh`](setup.sh) into **Run once before the first start**:
 
 ```sh
-$COMPOSE run --rm --no-deps -T -u 0 --entrypoint sh openclaw -c '
-mkdir -p /home/node/.openclaw/workspace
-if [ ! -f /home/node/.openclaw/openclaw.json ]; then
-cat > /home/node/.openclaw/openclaw.json <<"JSON"
-{
-  gateway: {
-    mode: "local",
-    bind: "lan",
-    port: 18789,
-    publicOrigin: "{{url}}",
-    auth: { mode: "token", token: "${OPENCLAW_GATEWAY_TOKEN}" },
-  },
+# Proxies in front of the gateway: Zoraxy, the central Traefik (VIP and nodes), and the VM's own
+# Traefik (a container on the "qsync" Docker network, whose range is read from this VM).
+SUBNET=$(docker network inspect qsync 2>/dev/null | grep -o '"Subnet": *"[0-9.]*/[0-9]*"' | grep -o '[0-9.]*/[0-9]*' | head -1)
+TRUSTED="10.128.101.101,10.128.101.253,10.128.101.113,10.128.101.114${SUBNET:+,$SUBNET}"
+
+# Create or update openclaw.json (runs again on every Retry, so existing installs get fixed too).
+$COMPOSE run --rm --no-deps -T -u 0 -e TRUSTED="$TRUSTED" --entrypoint node openclaw -e '
+const fs = require("fs");
+const dir = "/home/node/.openclaw", p = dir + "/openclaw.json";
+let c = {};
+if (fs.existsSync(p)) {
+  try { c = JSON.parse(fs.readFileSync(p, "utf8")); }
+  catch (e) { console.log("openclaw.json is not plain JSON, left as it is"); process.exit(0); }
 }
-JSON
-fi
-chown -R 1000:1000 /home/node/.openclaw
+const g = c.gateway = c.gateway || {};
+g.mode = g.mode || "local";
+g.bind = "lan";
+g.port = 18789;
+g.publicOrigin = "{{url}}";
+g.trustedProxies = process.env.TRUSTED.split(",").filter(Boolean);
+if (!g.auth) g.auth = { mode: "token", token: "${OPENCLAW_GATEWAY_TOKEN}" };
+fs.mkdirSync(dir + "/workspace", { recursive: true });
+fs.writeFileSync(p, JSON.stringify(c, null, 2) + "\n");
+console.log("openclaw.json ready, trusted proxies: " + g.trustedProxies.join(" "));
 '
+$COMPOSE run --rm --no-deps -T -u 0 --entrypoint sh openclaw -c 'chown -R 1000:1000 /home/node/.openclaw'
 ```
 
 ## Login info
@@ -72,7 +81,8 @@ then: ... devices approve <request id>
 
 ## Admin checks
 
-- **Run once** writes `openclaw.json` (only if it doesn't exist yet): `mode: local` (the gateway **refuses to start** without it, unless started with `--allow-unconfigured`, which the command also passes), `bind: lan`, port 18789, `publicOrigin: {{url}}` (the browser-origin check, so the Control UI works behind Zoraxy + both Traefiks; `controlUi.allowedOrigins` defaults to it) and token auth. No `trustedProxies`: the docs only show single IPs, not ranges.
+- **Run once** creates **or updates** `openclaw.json` at every install and Retry (other keys are kept): `mode: local` (the gateway refuses to start without it; the command also passes `--allow-unconfigured`), `bind: lan`, port 18789, `publicOrigin: {{url}}` (browser-origin check; `controlUi.allowedOrigins` defaults to it), token auth if none is set, and **`trustedProxies`**.
+- **`trustedProxies`** must list every proxy hop, or every request fails with `proxy_attribution_required` ("Proxy client attribution is required"): Zoraxy (10.128.101.101), the central Traefik VIP and nodes (10.128.101.253, .113, .114) and the VM's own Traefik, whose `qsync` Docker network range run once reads with `docker network inspect qsync`. If the edge proxies change, update the addresses in `setup.sh` and Retry the installs.
 - **404 after install** = the gateway isn't running or the image's built-in `HEALTHCHECK` (`/healthz`) isn't passing yet; Traefik doesn't route to unhealthy containers. Check `docker compose -p qa<id> ps` and the logs. The token itself stays in the `OPENCLAW_GATEWAY_TOKEN` variable, not in the file.
 - **Auth:** token mode, token = `{{secret}}`. Browser pairing stays on (OpenClaw's recommendation); the first browser is approved with the `devices approve` command above. Never set the retired `dangerouslyDisableDeviceAuth`.
 - **No Docker sandbox:** 2.0's Docker/Podman sandbox needs the Docker socket, which VPS Pass templates don't allow (it's off by default anyway). The agent's tools run inside its own container, with `no-new-privileges` and `NET_RAW`/`NET_ADMIN` dropped, as in the upstream compose.
