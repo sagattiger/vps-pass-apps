@@ -171,7 +171,11 @@ Any other `{{name}}` stays literal.
 1. Create `apps/<slug>/` (lowercase `a-z0-9-`; the slug also picks the selfh.st logo).
 2. Write `docker-compose.yml`, `app.json` (copy one from another app) and, if needed, `setup.sh`.
 3. Write `README.md`: catalogue fields, image tags and why, first login, admin checks (SMTP, proxy hops…), paid products.
-4. Run the validator:
+4. Update the index and run the validator:
+   ```bash
+   python3 scripts/catalog.py               # rewrites catalog.json from every app.json
+   ```
+   Then:
    ```bash
    pip install pyyaml
    python3 scripts/validate.py              # every app
@@ -180,6 +184,15 @@ Any other `{{name}}` stays literal.
    It checks the rules above, renders the placeholders with sample values and runs `docker compose config` with the merged `qsync.yml` (only the Docker CLI with the compose plugin is needed, no daemon). The same check runs on every push (GitHub Actions).
 5. Add the app in the admin with status **Testing**. Install it on a real VPS Pass and follow it with `php artisan proxmox:core --app=<id> --logs`. When it works, set it to **Stable** here and in the admin.
 6. Add a row to the table above.
+
+## How the catalogue gets these apps
+
+Paymenter → Proxmox → Core VPS apps → **Sync from GitHub** (or `php artisan proxmox:core-sync`) copies this repository into the catalogue; with **Sync every hour** on it runs by itself at minute 17. It reads `catalog.json` (one file, no GitHub API calls), then each app's compose and `setup.sh`.
+
+- Apps that came from GitHub and weren't edited in the admin are **updated automatically** when the repo changes.
+- Apps **edited in the admin** are kept: use the row action **Update from GitHub**.
+- Apps **added or pasted by hand** (and the extension's starter apps) are kept unless the sync runs with `--replace` (`php artisan proxmox:core-sync --replace`), which overwrites their template fields only; status, prices and price products are never touched.
+- Installs never read GitHub: the catalogue row is the template. Running installs keep their compose until **Retry** (`php artisan proxmox:core --app=<id> --retry`).
 
 ## Sizing
 

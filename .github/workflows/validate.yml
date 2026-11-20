@@ -13,3 +13,5 @@ jobs:
         run: pip install pyyaml
       - name: Check every app
         run: python3 scripts/validate.py
+      - name: Check catalog.json
+        run: python3 scripts/catalog.py --check
