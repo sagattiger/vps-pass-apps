@@ -9,5 +9,6 @@
   "disk_mb": 4096,
   "free_from": "Q1",
   "status": "Testing",
-  "login_info": "Open the address right away, create your account and choose \"Claim this instance\" (the board-claim link is also in Logs). Add your AI provider key in the settings."
+  "login_info": "Create the first admin with an invite link. Make one in the VM:\ncd /opt/qsync/apps/{{app_id}} && docker compose -p qa{{app_id}} exec -u node paperclip pnpm paperclipai auth bootstrap-ceo --base-url {{url}}\nOpen the printed link, create your account, then add your AI provider key in the settings.",
+  "version": 2
 }
