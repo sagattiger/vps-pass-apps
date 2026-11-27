@@ -26,7 +26,16 @@ Paste [`docker-compose.yml`](docker-compose.yml) as it is. The installer adds th
 Paste [`setup.sh`](setup.sh) into **Run once before the first start**:
 
 ```sh
-$COMPOSE run --rm --no-deps -T -e NTFY_PASSWORD="{{password}}" ntfy user add --role=admin admin
+# The admin user is provisioned by ntfy itself at every start (NTFY_AUTH_USERS, "user:bcrypt-hash:role").
+# Only the bcrypt hash is made here, once; ntfy creates its auth database when the server starts.
+if [ ! -f auth.env ]; then
+  HASH=$(docker run --rm caddy:2-alpine caddy hash-password --plaintext "{{password}}")
+  case "$HASH" in
+    '$2'*) ;;
+    *) echo "could not make the password hash"; exit 1 ;;
+  esac
+  printf "NTFY_AUTH_USERS='admin:%s:admin'\n" "$HASH" > auth.env
+fi
 ```
 
 ## Login info
@@ -49,7 +58,8 @@ Server for the ntfy apps: {{url}}
 
 ## Admin checks
 
-- Access is **deny-all** by default with login on: nobody can read or publish without an account. The admin user is created by the run-once command (`ntfy user add`, password from `NTFY_PASSWORD`).
+- Access is **deny-all** by default with login on: nobody can read or publish without an account. The `admin` user is **provisioned by ntfy at every start** from `NTFY_AUTH_USERS` (`admin:<bcrypt hash>:admin`), loaded from `auth.env` in the app folder. **Run once** only makes that hash (with a throwaway `caddy:2-alpine` container) and writes `auth.env`, once. It no longer runs `ntfy user add`, which failed with *auth-file does not exist* because ntfy only creates `auth.db` when the server starts.
+- `auth.env` holds a bcrypt hash, not the password. Users removed from `NTFY_AUTH_USERS` are deleted at the next start; users the customer adds in the web UI or with `ntfy user add` are kept.
 - `NTFY_UPSTREAM_BASE_URL: https://ntfy.sh` is needed for instant notifications on iOS (it relays only a poll request, not the message).
 - `NTFY_BEHIND_PROXY: true` so ntfy uses the client IP from `X-Forwarded-For` for rate limits (check it after a test install).
 

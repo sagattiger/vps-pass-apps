@@ -3,6 +3,9 @@ services:
     image: binwiederhier/ntfy:latest
     restart: unless-stopped
     command: ["serve"]
+    env_file:
+      - path: auth.env
+        required: false
     environment:
       NTFY_BASE_URL: "{{url}}"
       NTFY_BEHIND_PROXY: "true"
