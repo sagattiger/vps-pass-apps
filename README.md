@@ -63,6 +63,7 @@ apps/<slug>/
 | [Immich](apps/immich) | `immich` | Photos | `immich-server:2283` | 2560 | 10240 | Q2 (Q1 R$ 6,99) | Testing |
 | [InvoiceShelf](apps/invoiceshelf) | `invoiceshelf` | Business | `invoiceshelf:8080` | 256 | 1024 | Q1 | Testing |
 | [IT-Tools](apps/it-tools) | `it-tools` | Developer | `it-tools:80` | 32 | 128 | Q1 | Testing |
+| [Jellyfin](apps/jellyfin) | `jellyfin` | Media | `jellyfin:8096` | 1024 | 8192 | Q2 | Testing |
 | [Kavita](apps/kavita) | `kavita` | Media | `kavita:5000` | 256 | 5120 | Q1 | Testing |
 | [Kimai](apps/kimai) | `kimai` | Business | `kimai:8001` | 384 | 1024 | Q1 | Testing |
 | [Leantime](apps/leantime) | `leantime` | Business | `leantime:8080` | 512 | 1536 | Q1 | Testing |

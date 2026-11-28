@@ -1,0 +1,13 @@
+{
+  "name": "Jellyfin",
+  "slug": "jellyfin",
+  "category": "Media",
+  "description": "Media server for movies, TV and music",
+  "web_service": "jellyfin",
+  "web_port": 8096,
+  "ram_mb": 1024,
+  "disk_mb": 8192,
+  "free_from": "Q2",
+  "login_info": "Open the address and finish the setup wizard: language, admin user and password, then add the /media library.",
+  "status": "Testing"
+}
